@@ -1,0 +1,297 @@
+/* ---------- fonts ---------- */
+
+@font-face {
+    font-family: coolvetica;
+    src: url(../fonts/coolvetica.otf);
+}
+
+@font-face {
+    font-family: harbel;
+    src: url(../fonts/harbel.ttf);
+}
+
+@font-face {
+    font-family: helvetica roman;
+    src: url(../fonts/helvetica\ roman.otf);
+}
+
+@font-face {
+    font-family: helvetica medium;
+    src: url(../fonts/helvetica\ medium.otf);
+}
+
+@font-face {
+    font-family: helvetica bold;
+    src: url(../fonts/helvetica\ bold.otf);
+}
+
+
+/* ---------- Variables---------- */
+:root {
+    --color-fondo: #f6f6f6;
+    --color-secundario: #FC2CB2;
+    --color-texto: #12181B;
+    --color-acento: #F3F49E;
+
+    --fuente-cursiva: harbel;
+    --fuente-titulos: coolvetica;
+    --fuente-subtitulos: helvetica bold;
+    --fuente-subsubtitulos: helvetica medium;
+    --fuente-body: helvetica roman;
+
+    --separacion-titulos: 1.5px;
+
+    --espacio: 1.5rem;
+    --radio: 12px;
+    --ancho-max: 860px;
+    --transicion: 0.25s ease;
+}
+
+/* ---------- Reset básico ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+/* ---------- Cabecera y menú (móvil) ---------- */
+.cabecera_oferta {
+    position: sticky;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background-color: var(--color-secundario);
+    text-align: center;
+    color: var(--color-fondo);
+    z-index: 10000; 
+    font-family: var(--fuente-body);
+    font-size: 14px;
+    }
+
+.cabecera {
+    position: absolute;
+    top: 30px; 
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: transparent;
+    color: var(--color-fondo);
+    transition: top var(--transicion), background-color var(--transicion), color 0.01s ease;
+    /* text-shadow: 0 2px 4px rgba(0, 0, 0, 1); */
+    font-family: var(--fuente-titulos);
+    font-size: 20px;
+    letter-spacing: var(--separacion-titulos);
+}
+
+.cabecera__barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo img {
+    filter: invert(1); 
+    transition: filter var(--transicion);
+    width: 44px;
+}
+
+
+/* ---------- header scrolled ---------- */
+.cabecera.scrolled {
+    position: fixed;
+    top: 0;
+    background-color: #ffffff;
+    text-shadow: none;
+}
+
+.cabecera.scrolled, 
+.cabecera.scrolled .menu-btn span {
+    color: var(--color-texto);
+}
+
+.cabecera.scrolled .logo img {
+    filter: invert(0); 
+}
+
+
+/* ---------- Botón hamburguesa ---------- */
+.menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-btn span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: var(--color-texto);
+    border-radius: 2px;
+    transition: transform var(--transicion), opacity var(--transicion);
+}
+
+/* ----- barras del menú ----- */
+.menu-btn.abierto span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-btn.abierto span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.abierto span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* En móvil el menú empieza oculto: jQuery lo despliega */
+.menu {
+    display: none;
+    padding: 0 var(--espacio) 1rem;
+}
+
+.menu a {
+    display: block;
+    padding: 0.8rem 0;
+    text-decoration: none;
+    transition: color var(--transicion);
+}
+
+.menu a:nth-child(4) {
+    color: var(--color-secundario);
+}
+
+.menu a:hover {
+    color: var(--color-secundario);
+}
+
+/* ----- hero ----- */
+#hero {
+    position: relative;
+    width: 100%;
+    height: 70vh; 
+    overflow: hidden; 
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 60px; 
+    left: 30px;  
+    max-width: 700px; 
+    z-index: 2; 
+    color: var(--color-fondo); 
+}
+
+.hero-content h1 {
+    font-size: 2.9rem;
+    font-weight: lighter;
+    line-height: 53px;
+    font-family: var(--fuente-titulos);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.cursiva {
+    font-family:var(--fuente-cursiva);
+    letter-spacing: normal;
+}
+
+/* ----- boton layout ----- */
+.btn-principal {
+    font-family: var(--fuente-subsubtitulos);
+    display: inline-block;
+    padding: 16px 40px;
+    background-color: var(--color-secundario);
+    color: #ffffff;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 50px;
+    outline: 1.5px solid var(--color-secundario);
+    outline-offset: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-principal:hover {
+    transform: scale(1.03);
+    outline-offset: 8px;
+    outline: 1.5px solid var(--color-fondo);
+    background-color: var(--color-fondo);
+    color: var(--color-secundario);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- Escritorio ---------- */
+@media (min-width: 768px) {
+    .cabecera {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 var(--espacio);
+    }
+
+    .cabecera__barra {
+        padding: 1rem 0;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    /* !important porque jQuery deja un display en línea en el HTML
+       al plegar el menú en móvil; así el menú siempre se ve en escritorio */
+    .menu {
+        display: flex !important;
+        gap: 1.5rem;
+        padding: 0;
+    }
+
+    .menu a {
+        padding: 0;
+        border-top: none;
+    }
+}
+
+
