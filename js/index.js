@@ -7,3 +7,13 @@ $(window).on("scroll", function() {
         $(".cabecera").removeClass("scrolled");
     }
 });
+
+// POLAROIDS
+$(document).ready(function() {
+    $(".foto-card").draggable({
+
+        containment: "#polaroids", 
+        stack: ".foto-card"   
+    });
+});
+
