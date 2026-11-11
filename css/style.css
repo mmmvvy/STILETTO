@@ -234,7 +234,7 @@ a {
 .hero-content {
     position: absolute;
     bottom: 60px; 
-    left: 30px;  
+    left: 40px;  
     max-width: 700px; 
     z-index: 2; 
     color: var(--color-fondo); 
@@ -277,13 +277,98 @@ a {
     color: var(--color-secundario);
 }
 
+/* ----- carrusel ----- */
 
+.carrusel {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding: 40px 20px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
 
+.carrusel__ventana {
+    overflow: hidden;
+    width: 100%;
+    padding: 0.5rem 0;
+}
 
+.carrusel__pista {
+    display: flex;
+    gap: 1rem;
+    transition: transform var(--transicion);
+}
 
+.presson {
+    flex: 0 0 calc(25% - 0.8rem);
+    padding: 1rem;
+    border: 1px solid transparent;
+    transition: border var(--transicion);
+    background: transparent;
+    cursor: pointer;
+}
 
+.presson:hover {
+    border-color: var(--color-secundario);
+}
 
+.presson img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
 
+.presson__info {
+    margin-top: 0.6rem;
+}
+
+.presson__info h3 {
+    font-size: 0.95rem;
+    font-family: var(--fuente-subsubtitulos);
+    margin-bottom: 0.2rem;
+}
+
+.presson__info p {
+    font-size: 0.9rem;
+    font-family: var(--fuente-body);
+    color: var(--color-texto);
+}
+
+/* ----- controles ----- */
+.carrusel__controles {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.carrusel__controles button {
+    color: var(--color-secundario);
+    background: transparent;
+    border: none;
+    font-size: 5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carrusel__controles button svg {
+    width: 42px;
+    height: 42px;
+    transition: transform var(--transicion);
+}
+
+.carrusel__controles button:hover svg {
+    transform: scale(1.15); 
+}
 
 
 
@@ -308,7 +393,7 @@ a {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 var(--espacio);
+        padding: 0 2.5rem;
     }
 
     .cabecera__barra {
