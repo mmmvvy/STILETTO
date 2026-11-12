@@ -12,39 +12,31 @@ $(".menu a").on("click", function() {
 })
 
 
-// TRANSICIÓN DEL HEADER
+// COMPORTAMIENTO DEL HEADER
+
+let ultimoScroll = 0;
+
 $(window).on("scroll", function() {
-    if ($(window).scrollTop() > 30) {
-        $(".cabeceranormal").addClass("scrolled");
+    let scrollActual = $(this).scrollTop();
+
+    if (scrollActual > 30) {
+        $(".cabecera_normal").addClass("scrolled");
     } else {
-        $(".cabeceranormal").removeClass("scrolled");
+        $(".cabecera_normal").removeClass("scrolled");
+        $(".cabecera_normal").removeClass("oculto");
     }
+
+    if (scrollActual > 650) { 
+        
+        if (scrollActual > ultimoScroll) {
+            $(".cabecera_normal").addClass("oculto");
+        } else {
+            $(".cabecera_normal").removeClass("oculto");
+        }
+    }
+
+    ultimoScroll = scrollActual;
 });
 
-var pista = $(".carrusel__pista");
-var pressons = $(".presson");
-var botonNext = $("#siguiente");
-var botonPrev = $("#anterior");
 
-var indice = 0;
-var totalPressons = pressons.length;
-var visibles = 4;
 
-function actualizarCarrusel() {
-    var desplazamiento = indice * (100 / visibles);
-    pista.css("transform", "translateX(-" + desplazamiento + "%)");
-}
-
-botonNext.on("click", function() {
-    if (indice < totalPressons - visibles) {
-        indice++;
-        actualizarCarrusel();
-    }
-});
-
-botonPrev.on("click", function() {
-    if (indice > 0) {
-        indice--;
-        actualizarCarrusel();
-    }
-});
