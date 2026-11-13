@@ -26,7 +26,7 @@ $(window).on("scroll", function() {
         $(".cabecera_normal").removeClass("oculto");
     }
 
-    if (scrollActual > 500) { 
+    if (scrollActual > 430) { 
         
         if (scrollActual > ultimoScroll) {
             $(".cabecera_normal").addClass("oculto");
