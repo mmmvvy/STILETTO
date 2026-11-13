@@ -65,6 +65,7 @@ body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 a {
@@ -353,8 +354,6 @@ b{
 .presson img {
     width: 100%;
     height: auto;
-    display: block;
-    object-fit: cover;
 }
 
 .presson__info {
@@ -732,10 +731,6 @@ b{
 
 .btn-reserva:hover {
     transform: scale(1.03);
-    outline-offset: 8px;
-    outline: 1.5px solid var(--color-secundario);
-    background-color: var(--color-fondo);
-    color: var(--color-secundario);
 }
 
 /* sello */
@@ -1065,7 +1060,6 @@ b{
     flex-direction: column;
     max-width: 280px;
     justify-content: space-between;
-
 }
 
 .a-img {
@@ -1103,10 +1097,10 @@ b{
 }
 
 /* marquesina */
-.comunidad-section {
+.comunidad-marquee{
     width: 100%;
     overflow: hidden;
-    padding: 30px 0;
+    padding: 30px 0 160px 0;
     position: relative;
 }
 
@@ -1158,6 +1152,110 @@ b{
         transform: translateX(-50%);
     }
 }
+
+/* look final */
+.look-final {
+    padding: 20px 50px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.look-final-b {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 30px 0;
+}
+
+.look-final-b img {
+    max-width: 330px;
+}
+
+
+
+/* ----- PRESSONS----- */
+#pressons{
+    padding: 80px 50px;
+}
+
+.pressons-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#pressons .pressons-content .p-cabecera h1 {
+    font-family: var(--fuente-titulos);
+    font-size: var(--tamano-titulo);
+    font-weight: lighter;
+}
+
+.p-filtros {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.p-filtros button {
+    padding: 8px 10px;
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-secundario);
+    font-family: var(--fuente-subsubtitulos);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: color var(--transicion), background-color var(--transicion), scale var(--transicion);
+}
+
+.p-filtros button:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
+    scale: 1.08;
+}
+
+.p-filtros button.is-activo {
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
+    scale: 1.08;
+}
+
+.p-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 30px 0;
+}
+.pressons{
+    padding: 1rem;
+    border: 1px solid transparent;
+    transition: border var(--transicion);
+    background: transparent;
+    cursor: pointer;
+    max-width: 340px;
+    align-items: center;
+}
+
+.pressons img {
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.pressons:hover img {
+    transform: scale(1.02);
+}
+
+.pressons:hover {
+    transition: border 0.3s ease;
+    border: 1px solid var(--color-secundario);
+
+}
+
+
 
 /* ----- footer ----- */
 footer {
