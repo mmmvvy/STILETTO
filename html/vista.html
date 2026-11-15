@@ -32,9 +32,74 @@
             <a href="reserva1.html">RESERVA YA</a>
             <!-- <a href="#search">  <i data-feather="search"></i></a> -->
             <a href="#perfil">  <i data-feather="user"></i></a>
-            <a href="#carrito">  <i data-feather="shopping-cart"></i></a>
+            <a href="#carrito">  <i data-feather="shopping-cart" class="abrirCarrito"></i></a>
         </nav>
     </header>
+    
+    <!-- carrito menu -->
+    <section id="carrito-menu">
+        <div class="carrito-contenedor">
+            <div class="carrito-cabecera">
+                <h2>CARRITO</h2>
+                <button type="button" class="cerrar-carrito" aria-label="Cerrar carrito">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+
+            <div id="lista-carrito"></div>
+
+            <section class="acordeon" id="esteticas">
+                <div class="acordeon__item">
+                    <button type="button" class="acordeon__titulo">
+                        COMPLETA TU SET
+                    </button>
+                    <div class="acordeon__contenido">
+                        <div class="producto-card">
+                            <div class="producto-image">
+                                <img src="../media/img/vista/v6.png" alt="">
+                            </div>
+                            <div class="producto-info">
+                                <h3>Stiletto pegamento de uñas 5g</h3>
+                                <p class="product-price">7 EUR</p>
+                            </div>
+                            <div class="producto-action">
+                                <button type="button" class="btn-add-to-cart">AÑADE AL CARRITO</button>
+                            </div>
+                        </div>
+                        <div class="producto-card">
+                            <div class="producto-image">
+                                <img src="../media/img/vista/v7.png" alt="">
+                            </div>
+                            <div class="producto-info">
+                                <h3>Stiletto kit</h3>
+                                <p class="product-price">20 EUR</p>
+                            </div>
+                            <div class="producto-action">
+                                <button type="button" class="btn-add-to-cart">AÑADE AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </section> 
+
+            <form class="compra" id="formulario-compra" novalidate>
+                <div class="compra__principal">
+                    <aside class="resumen" aria-labelledby="resumen-titulo">
+                        <dl class="resumen__cuentas">
+                            <div class="resumen__fila resumen__fila--total">
+                                <dt>Subtotal</dt>
+                                <dd id="total">0,00 €</dd>
+                            </div>
+                        </dl>
+                        <button type="submit" class="boton boton--rosa" id="boton-comprar" disabled>
+                            Comprar ahora
+                        </button>
+                    </aside>
+                </div>
+            </form>
+        </div>
+    </section>
+
 
     <section id="vista">
         <div class="vista-contenedor">
