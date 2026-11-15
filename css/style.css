@@ -404,7 +404,6 @@ b{
 }
 
 /* ----- sobre nosotras ----- */
-
 #sobre {
     padding: 10px 50px;
     height: 95vh;
@@ -967,7 +966,6 @@ b{
 
 .servicios-b .servicios-borde {
     flex: 1;
-    /* background-color: #f3f49e84; */
 }
 
 .servicios-b .servicios-borde .servicios-a-texto .servicios-lista {
@@ -982,8 +980,7 @@ b{
 }
 
 
-/* ----- LOOKBOOK ----- */
-
+/* ----- lookbook ----- */
 #lookbook {
     padding: 100px 50px 0 50px;
 }
@@ -1175,7 +1172,7 @@ b{
 
 
 
-/* ----- PRESSONS----- */
+/* ----- pressons----- */
 #pressons{
     padding: 80px 50px;
 }
@@ -1228,7 +1225,7 @@ b{
     align-items: center;
     justify-content: flex-start;
     gap: 0.5rem;
-    padding: 30px 0;
+    padding: 20px 0;
 }
 .pressons{
     padding: 1rem;
@@ -1253,6 +1250,303 @@ b{
     transition: border 0.3s ease;
     border: 1px solid var(--color-secundario);
 
+}
+
+
+/* ----- vista ----- */
+
+#vista {
+    width: 100%;
+    padding: 140px 50px 40px 50px;
+}
+
+.vista-contenedor {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; 
+    gap: 2rem;
+    align-items: start;
+}
+
+/* --- COLUMNA IZQUIERDA --- */
+.vista-fotos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 48vw;
+}
+
+.foto-doble {
+    width: 100%;
+    display: flex;
+}
+
+.vista-fotos-a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.vista-fotos-a img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+.foto-doble {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem; 
+}
+
+.foto-doble img {
+    width: calc(50% - 0.25rem); 
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* --- COLUMNA DERECHA --- */
+.vista-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: sticky;
+    top: 70px;
+    padding: 0 10px;
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.tipo-una {
+    padding: 4px 0;
+}
+
+.tipo {
+    display: inline-block;
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
+    padding: 8px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-family: var(--fuente-subsubtitulos);
+}
+
+.info-text h2 {
+    font-size: 2rem;
+    font-family: var(--fuente-titulos);
+    font-weight: lighter;
+}
+
+.info-text p {
+    font-size: 14px;
+    font-family: var(--fuente-body);
+
+}
+
+.info-text p:last-child {
+    font-family: var(--fuente-body);
+    line-height: 1.5;
+    font-size: 17px;
+}
+
+
+/* --- BOTONES --- */
+.info-botones {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    font-family: var(--fuente-body);
+}
+
+.cantidad-selector {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 130px;
+    height: 48px;
+    padding: 0 15px;
+    border: 1px solid var(--color-texto);
+    border-radius: 50px;
+}
+
+.btn-cantidad {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.numero {
+    font-size: 16px;
+    user-select: none;
+}
+
+.btn-reserva {
+    flex: 1; 
+    font-family: var(--fuente-subsubtitulos);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    outline: 1.5px solid var(--color-secundario);
+    outline-offset: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-reserva:hover {
+    scale: 1;
+}
+
+/* --- ACORDEÓN --- */
+.acordeon {
+    border-top: 1px solid var(--color-texto);
+    width: 100%;
+}
+
+.acordeon__item {
+    border-bottom: 1px solid var(--color-texto);
+}
+
+.acordeon__titulo {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 18px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--fuente-subsubtitulos);
+    font-size: 16px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.acordeon__titulo::after {
+    content: "+";
+    margin-left: auto;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--color-texto);
+    transition: transform var(--transicion);
+    font-family: var(--fuente-body);
+}
+
+.acordeon__titulo.abierto::after {
+    transform: rotate(45deg);
+    font-family: var(--fuente-body);
+    color: var(--color-texto);
+    font-size: 1.5rem;
+}
+
+.acordeon__contenido {
+    padding: 0 0 20px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    display: none;
+}
+
+.acordeon__contenidoo {
+    padding: 0 0 10px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    display: none;
+}
+
+
+.acordeon__contenido p {
+    font-family: var(--fuente-body);
+    padding: 2px 0;
+}
+
+.acordeon__contenido h3 {
+    font-family: var(--fuente-subsubtitulos);
+    padding: 4px 0;
+}
+
+.acordeon__contenido ul {
+    padding: 2px 0 6px 20px;
+
+}
+
+.acordeon__contenido ul li {
+    font-family: var(--fuente-body);
+    padding-left: 10px;
+}
+
+/* --- PRODUCTOS COMPLEMENTARIOS --- */
+.producto-card {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--color-fondo);
+    border-radius: 8px;
+    padding: 2px;
+}
+
+.producto-image img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.producto-info {
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.producto-info h3 {
+    font-size: 15px;
+    margin: 0 0 5px 0;
+    font-family: var(--fuente-subsubtitulos);
+}
+
+.product-price {
+    font-size: 12px;
+    color: #666;
+    font-family: var(--fuente-body);
+}
+
+.btn-add-to-cart {
+    border: none;
+    border-radius: 50px;
+    padding: 8px 14px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: var(--fuente-subsubtitulos);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
+    text-decoration: none;
+    outline: 1.5px solid var(--color-secundario);
+    outline-offset: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-add-to-cart:hover{
+    scale: 1.04;
+}
+
+.tmb {
+    padding: 0 24px;
+    font-size: 26px;
+    margin-bottom: -20px;
+    font-family: var(--fuente-titulos);
+    font-weight: lighter;
 }
 
 
