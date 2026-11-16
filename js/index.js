@@ -78,3 +78,56 @@ $(document).ready(function() {
     });
 });
 
+// COOKIES 
+
+$(document).ready(function () {
+
+    var cookiesCerradas = false;
+
+    setTimeout(function () {
+        if (!cookiesCerradas) {
+            $('#stiletto-cookie-banner').addClass('activo');
+        }
+    }, 1000);
+
+    $('#btn-aceptar-cookies, #btn-rechazar-cookies').on('click', function () {
+        cookiesCerradas = true;
+        $('#stiletto-cookie-banner').removeClass('activo');
+    });
+});
+
+
+// PERFIL
+
+$(document).ready(function () {
+    var $iconoPerfil = $('.icono-perfil, a[href="#perfil"], .fa-user').first();
+
+    $iconoPerfil.on('click', function (e) {
+        e.preventDefault();
+        $('#stiletto-perfil-modal').addClass('activo');
+    });
+
+    $('#btn-cerrar-perfil').on('click', function () {
+        $('#stiletto-perfil-modal').removeClass('activo');
+    });
+
+    $('#stiletto-perfil-modal').on('click', function (e) {
+        if ($(e.target).is('#stiletto-perfil-modal')) {
+            $(this).removeClass('activo');
+        }
+    });
+
+    $('#form-registro-rapido').on('submit', function (e) {
+        e.preventDefault();
+        var email = $('#email-registro').val().trim();
+        var password = $('#password-registro').val().trim();
+
+        if (email && password) {
+            alert('¡Cuenta creada con éxito! Bienvenid@ a Stiletto.');
+            $('#stiletto-perfil-modal').removeClass('activo');
+            
+            $('#email-registro').val('');
+            $('#password-registro').val('');
+        }
+    });
+});
