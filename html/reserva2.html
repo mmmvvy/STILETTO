@@ -10,7 +10,7 @@
 <body>
   <!-- ============ CABECERA CON MENÚ RESPONSIVE ============ -->
    <div class="cabecera_oferta">
-    <p>📩 10% OFF en tu primer pedido de Press On Nails con el código: BIENVENIDA</p>
+    <p>📩 10% OFF en tu primer pedido de Press On Nails con el código: <b>BIENVENIDA</b></p>
    </div>
     <header class="cabecera_normal">
         <div class="cabecera__barra">
@@ -30,21 +30,145 @@
             <a href="presson.html">PRESS ON</a>
             <a href="lookbook.html">LOOKBOOK</a>
             <a href="reserva1.html">RESERVA YA</a>
-            <!-- <a href="#search">  <i data-feather="search"></i></a> -->
             <a href="#perfil">  <i data-feather="user"></i></a>
             <a href="#carrito">  <i data-feather="shopping-cart"></i></a>
         </nav>
     </header>
 
+    <section id="carrito-menu">
+        <div class="carrito-contenedor">
+            <div class="carrito-cabecera">
+                <h2>CARRITO</h2>
+                <button type="button" class="cerrar-carrito" aria-label="Cerrar carrito">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+
+            <div id="lista-carrito"></div>
+
+            <section class="acordeon" id="esteticas">
+                <div class="acordeon__item">
+                    <button type="button" class="acordeon__titulo">
+                        COMPLETA TU SET
+                    </button>
+                    <div class="acordeon__contenido">
+                        <div class="producto-card">
+                            <div class="producto-image">
+                                <img src="../media/img/vista/v6.png" alt="">
+                            </div>
+                            <div class="producto-info">
+                                <h3>Stiletto pegamento de uñas 5g</h3>
+                                <p class="product-price">7 EUR</p>
+                            </div>
+                            <div class="producto-action">
+                                <button type="button" class="btn-add-to-cart">AÑADE AL CARRITO</button>
+                            </div>
+                        </div>
+                        <div class="producto-card">
+                            <div class="producto-image">
+                                <img src="../media/img/vista/v7.png" alt="">
+                            </div>
+                            <div class="producto-info">
+                                <h3>Stiletto kit</h3>
+                                <p class="product-price">20 EUR</p>
+                            </div>
+                            <div class="producto-action">
+                                <button type="button" class="btn-add-to-cart">AÑADE AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </section> 
+
+            <form class="compra" id="formulario-compra" novalidate>
+                <div class="compra__principal">
+                    <aside class="resumen" aria-labelledby="resumen-titulo">
+                        <dl class="resumen__cuentas">
+                            <div class="resumen__fila resumen__fila--total">
+                                <dt>Subtotal</dt>
+                                <dd id="total">0,00 €</dd>
+                            </div>
+                        </dl>
+                        <button type="submit" class="boton boton--rosa" id="boton-comprar" disabled>
+                            Comprar ahora
+                        </button>
+                    </aside>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="servicios" id="paso-2-seccion">
+        <div class="paso2-cabecera">
+            <a href="reserva1.html" class="btn-volver" id="btn-volver-paso1">←</a>
+            <h1 class="reserva-titulo">Elige <span class="curisiva">fecha</span></h1>
+        </div>
+
+        <div class="reserva-grid2">
+            <div class="calendario-horas-wrapper">
+                <div class="calendario-caja">
+                    <div id="calendario-ui"></div>
+                </div>
+                <div class="horas-contenedor">
+                    <div class="bloque-horario">
+                        <h3>Mañana</h3>
+                        <div class="horas-grid" id="grid-horas-manana">
+                            <p style="font-size: 0.85rem; color: #888;">Selecciona un día primero</p>
+                        </div>
+                    </div>
+                    <div class="bloque-horario">
+                        <h3>Tarde</h3>
+                        <div class="horas-grid" id="grid-horas-tarde">
+                            <p style="font-size: 0.85rem; color: #888;">Selecciona un día primero</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- resumen -->
+            <aside class="resumen-reserva-sticky">
+                <div class="resumen-caja">
+                    <h3>Resumen de la cita</h3>
+                    <div class="resumen-item">
+                        <span>Servicio</span>
+                        <strong id="r2-servicio">-</strong>
+                    </div>
+                    <div class="resumen-item">
+                        <span>Forma</span>
+                        <strong id="r2-forma">-</strong>
+                    </div>
+                    <div class="resumen-item">
+                        <span>Largura</span>
+                        <strong id="r2-largura">-</strong>
+                    </div>
+                    <div class="resumen-item">
+                        <span>Nail Art</span>
+                        <strong id="r2-art">-</strong>
+                    </div>
+                    <div class="resumen-item" id="fila-resumen-fecha" style="display: none;">
+                        <span>Fecha y Hora</span>
+                        <strong id="r2-fecha-hora">-</strong>
+                    </div>
+                    <div class="resumen-total-fila">
+                        <span>TOTAL</span>
+                        <strong id="r2-total">0 €</strong>
+                    </div>
+                </div>
+                <button type="button" class="boton boton--rosa" id="btn-finalizar-reserva" disabled>CONFIRMAR CITA</button>
+            </aside>
+
+        </div>
+    </section>
 
 
-
-
+    <!-- js -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script>
       feather.replace();
     </script>
+    <script src="../js/reservacita.js"></script>
     <script src="../js/app.js"></script>
 </body>
 </html>

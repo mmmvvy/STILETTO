@@ -10,7 +10,7 @@
 <body>
   <!-- ============ CABECERA CON MENÚ RESPONSIVE ============ -->
    <div class="cabecera_oferta">
-    <p>📩 10% OFF en tu primer pedido de Press On Nails con el código: BIENVENIDA</p>
+    <p>📩 10% OFF en tu primer pedido de Press On Nails con el código: <b>BIENVENIDA</b></p>
    </div>
     <header class="cabecera_normal">
         <div class="cabecera__barra">
@@ -36,6 +36,158 @@
         </nav>
     </header>
 
+    <section id="carrito-menu">
+        <div class="carrito-contenedor">
+            <div class="carrito-cabecera">
+                <h2>CARRITO</h2>
+                <button type="button" class="cerrar-carrito" aria-label="Cerrar carrito">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+
+            <div id="lista-carrito"></div>
+
+            <section class="acordeon" id="esteticas">
+                <div class="acordeon__item">
+                    <button type="button" class="acordeon__titulo">
+                        COMPLETA TU SET
+                    </button>
+                    <div class="acordeon__contenido">
+                        <div class="producto-card">
+                            <div class="producto-image">
+                                <img src="../media/img/vista/v6.png" alt="">
+                            </div>
+                            <div class="producto-info">
+                                <h3>Stiletto pegamento de uñas 5g</h3>
+                                <p class="product-price">7 EUR</p>
+                            </div>
+                            <div class="producto-action">
+                                <button type="button" class="btn-add-to-cart">AÑADE AL CARRITO</button>
+                            </div>
+                        </div>
+                        <div class="producto-card">
+                            <div class="producto-image">
+                                <img src="../media/img/vista/v7.png" alt="">
+                            </div>
+                            <div class="producto-info">
+                                <h3>Stiletto kit</h3>
+                                <p class="product-price">20 EUR</p>
+                            </div>
+                            <div class="producto-action">
+                                <button type="button" class="btn-add-to-cart">AÑADE AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </section> 
+
+            <form class="compra" id="formulario-compra" novalidate>
+                <div class="compra__principal">
+                    <aside class="resumen" aria-labelledby="resumen-titulo">
+                        <dl class="resumen__cuentas">
+                            <div class="resumen__fila resumen__fila--total">
+                                <dt>Subtotal</dt>
+                                <dd id="total">0,00 €</dd>
+                            </div>
+                        </dl>
+                        <button type="submit" class="boton boton--rosa" id="boton-comprar" disabled>
+                            Comprar ahora
+                        </button>
+                    </aside>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="servicios" id="paso-3-seccion">
+    <div class="paso3-cabecera">
+        <a href="reserva2.html" class="btn-volver" id="btn-volver-paso2">← Volver</a>
+    </div>
+
+    <div class="reserva-grid3">
+        
+        <!-- datos y pago -->
+        <div class="form-reserva-wrapper">
+            
+            <!-- bloque de Datos -->
+            <div class="grupo-formulario">
+                <h2>Datos</h2>
+                <div class="inputs-stack">
+                    <input type="text" id="r3-nombre" class="input-stiletto" placeholder="Nombre completo" required>
+                    <input type="email" id="r3-email" class="input-stiletto" placeholder="Email" required>
+                    <input type="tel" id="r3-telefono" class="input-stiletto" placeholder="Teléfono" required>
+                </div>
+            </div>
+
+            <!-- bloque de Pago -->
+            <div class="grupo-formulario">
+                <h2>Pago</h2>
+                <div class="inputs-stack">
+                    <input type="text" id="r3-tarjeta" class="input-stiletto" placeholder="Número de tarjeta" required>
+                    <div class="input-row-doble">
+                        <input type="text" id="r3-exp" class="input-stiletto" placeholder="Fecha de expiración" required>
+                        <input type="text" id="r3-cvv" class="input-stiletto" placeholder="Código de seguridad" required>
+                    </div>
+                    <input type="text" id="r3-titular" class="input-stiletto" placeholder="Nombre de tarjeta" required>
+                </div>
+            </div>
+
+            <button type="button" class="boton boton--rosa" id="btn-completar-reserva">SIGUIENTE</button>
+
+        </div>
+
+        <!-- resumen -->
+        <aside class="resumen-reserva-sticky">
+            <div class="resumen-caja resumen-caja-amarilla">
+                <h3>Servicio</h3>
+                
+                <div class="resumen-item">
+                    <span id="r3-servicio">-</span>
+                    <strong id="r3-precio-servicio">0 EUR</strong>
+                </div>
+                <div class="resumen-item">
+                    <span id="r3-forma">-</span>
+                    <strong id="r3-precio-forma">0 EUR</strong>
+                </div>
+                <div class="resumen-item">
+                    <span id="r3-largura">-</span>
+                    <strong id="r3-precio-largura">0 EUR</strong>
+                </div>
+                <div class="resumen-item">
+                    <span id="r3-art">-</span>
+                    <strong id="r3-precio-art">0 EUR</strong>
+                </div>
+                
+                <div class="resumen-item separador-linea">
+                    <span id="r3-fecha-resumen">-</span>
+                    <strong id="r3-hora-resumen">-</strong>
+                </div>
+
+                <!-- Cupón de descuento -->
+                <div class="cupon-contenedor">
+                    <input type="text" id="input-cupon" class="input-stiletto" placeholder="Código de descuento">
+                </div>
+
+                <div class="resumen-item" id="fila-descuento" style="display: none; color: #ff2a8d;">
+                    <span>Descuento (10%)</span>
+                    <strong id="monto-descuento">-0.00 EUR</strong>
+                </div>
+
+                <div class="resumen-subtotal-fila">
+                    <span>Subtotal</span>
+                    <span id="r3-subtotal">0 EUR</span>
+                </div>
+
+                <div class="resumen-total-fila">
+                    <span>TOTAL</span>
+                    <strong id="r3-total">0 EUR</strong>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+    </section>
+
 
 
 
@@ -45,6 +197,7 @@
     <script>
       feather.replace();
     </script>
+    <script src="../js/reservacita.js"></script>
     <script src="../js/app.js"></script>
 </body>
 </html>

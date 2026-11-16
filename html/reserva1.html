@@ -10,7 +10,7 @@
 <body>
   <!-- ============ CABECERA CON MENÚ RESPONSIVE ============ -->
    <div class="cabecera_oferta">
-    <p>📩 10% OFF en tu primer pedido de Press On Nails con el código: BIENVENIDA</p>
+    <p>📩 10% OFF en tu primer pedido de Press On Nails con el código: <B>BIENVENIDA</B></p>
    </div>
     <header class="cabecera_normal">
         <div class="cabecera__barra">
@@ -36,8 +36,233 @@
         </nav>
     </header>
 
+    <section id="carrito-menu">
+        <div class="carrito-contenedor">
+            <div class="carrito-cabecera">
+                <h2>CARRITO</h2>
+                <button type="button" class="cerrar-carrito" aria-label="Cerrar carrito">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+
+            <div id="lista-carrito"></div>
+
+            <section class="acordeon" id="esteticas">
+                <div class="acordeon__item">
+                    <button type="button" class="acordeon__titulo">
+                        COMPLETA TU SET
+                    </button>
+                    <div class="acordeon__contenido">
+                        <div class="producto-card">
+                            <div class="producto-image">
+                                <img src="../media/img/vista/v6.png" alt="">
+                            </div>
+                            <div class="producto-info">
+                                <h3>Stiletto pegamento de uñas 5g</h3>
+                                <p class="product-price">7 EUR</p>
+                            </div>
+                            <div class="producto-action">
+                                <button type="button" class="btn-add-to-cart">AÑADE AL CARRITO</button>
+                            </div>
+                        </div>
+                        <div class="producto-card">
+                            <div class="producto-image">
+                                <img src="../media/img/vista/v7.png" alt="">
+                            </div>
+                            <div class="producto-info">
+                                <h3>Stiletto kit</h3>
+                                <p class="product-price">20 EUR</p>
+                            </div>
+                            <div class="producto-action">
+                                <button type="button" class="btn-add-to-cart">AÑADE AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </section> 
+
+            <form class="compra" id="formulario-compra" novalidate>
+                <div class="compra__principal">
+                    <aside class="resumen" aria-labelledby="resumen-titulo">
+                        <dl class="resumen__cuentas">
+                            <div class="resumen__fila resumen__fila--total">
+                                <dt>Subtotal</dt>
+                                <dd id="total">0,00 €</dd>
+                            </div>
+                        </dl>
+                        <button type="submit" class="boton boton--rosa" id="boton-comprar" disabled>
+                            Comprar ahora
+                        </button>
+                    </aside>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="servicios">
+        <h1 class="reserva-titulo">Pide tu cita en <span class="cursiva">Stiletto</span></h1>
+
+        <form id="form-reserva" class="reserva-grid">
+            
+            <!-- OPCIONES -->
+            <div class="reserva-opciones">
+                
+                <!-- Servicio -->
+                <div class="grupo-reserva">
+                    <h2>1. Servicio</h2>
+                    <p class="sub-label">Elige el servicio que te vas a hacer</p>
+                    <div class="opciones-lista">
+                        <label class="opcion-card">
+                            <input type="radio" name="servicio" value="Stiletto Signature" data-precio="40" checked>
+                            <div class="opcion-info">
+                                <h3>Stiletto Signature — 40 €</h3>
+                                <p>Uñas extra largas y super afiladas. El sello de la casa si quieres un look extremo.</p>
+                            </div>
+                        </label>
+                        <label class="opcion-card">
+                            <input type="radio" name="servicio" value="Gel-X Express" data-precio="35">
+                            <div class="opcion-info">
+                                <h3>Gel-X Express — 35 €</h3>
+                                <p>Extensiones de gel rápidas, ligeras y muy resistentes. Perfectas para cambiar de largo en minutos.</p>
+                            </div>
+                        </label>
+                        <label class="opcion-card">
+                            <input type="radio" name="servicio" value="Acrílico Esculpido" data-precio="40">
+                            <div class="opcion-info">
+                                <h3>Acrílico Esculpido — 40 €</h3>
+                                <p>Máxima dureza. Ideales para que aguanten todo sin romperse.</p>
+                            </div>
+                        </label>
+                        <label class="opcion-card">
+                            <input type="radio" name="servicio" value="Refuerzo en Uña Natural" data-precio="20">
+                            <div class="opcion-info">
+                                <h3>Refuerzo en Uña Natural — 20 €</h3>
+                                <p>Capa dura sobre tu propia uña para darle grosor sin añadir largo extra. Perfecta para aguantar nail art y relieves.</p>
+                            </div>
+                        </label>
+                        <label class="opcion-card">
+                            <input type="radio" name="servicio" value="Relleno" data-precio="23">
+                            <div class="opcion-info">
+                                <h3>Relleno — 23 €</h3>
+                                <p>Mantenimiento para cubrir el crecimiento y dejar el set como nuevo.</p>
+                            </div>
+                        </label>
+                        <label class="opcion-card">
+                            <input type="radio" name="servicio" value="Retirada Segura" data-precio="12">
+                            <div class="opcion-info">
+                                <h3>Retirada Segura — 12 €</h3>
+                                <p>Retirada limpia de cualquier tipo de extensión o gel 3D sin dañar tu uña natural.</p>
+                            </div>
+                        </label>
+                        <label class="opcion-card">
+                            <input type="radio" name="servicio" value="Tratamiento de Hidratación" data-precio="10">
+                            <div class="opcion-info">
+                                <h3>Tratamiento de Hidratación — 10 €</h3>
+                                <p>Cura rápida con aceites y vitaminas para recuperar la salud de tus uñas entre set y set.</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Forma -->
+                <div class="grupo-reserva">
+                    <h2>2. Forma</h2>
+                    <p class="sub-label">Elige la forma de tus uñas</p>
+                    <div class="opciones-grid-simple">
+                        <label class="chip-opcion"><input type="radio" name="forma" value="Almendradas" checked> Almendradas</label>
+                        <label class="chip-opcion"><input type="radio" name="forma" value="Cuadradas"> Cuadradas</label>
+                        <label class="chip-opcion"><input type="radio" name="forma" value="Stiletto"> Stiletto</label>
+                    </div>
+                </div>
+
+                <!-- Largura -->
+                <div class="grupo-reserva">
+                    <h2>3. Largura</h2>
+                    <p class="sub-label">Elige qué tan largas quieres las uñas</p>
+                    <div class="opciones-lista">
+                        <label class="opcion-card">
+                            <input type="radio" name="largura" value="S" data-precio-largura="0" checked>
+                            <div class="opcion-info"><h3>S</h3> <p>Largo natural de la uña</p></div>
+                        </label>
+                        <label class="opcion-card">
+                            <input type="radio" name="largura" value="M" data-precio-largura="2">
+                            <div class="opcion-info"><h3>M (+2 €)</h3> <p>Sobresale unos 2-4 mm de la yema del dedo</p></div>
+                        </label>
+                        <label class="opcion-card">
+                            <input type="radio" name="largura" value="L" data-precio-largura="4">
+                            <div class="opcion-info"><h3>L (+4 €)</h3> <p>Sobresale unos 4-8 mm de la yema del dedo</p></div>
+                        </label>
+                        <label class="opcion-card">
+                            <input type="radio" name="largura" value="XL" data-precio-largura="6">
+                            <div class="opcion-info"><h3>XL (+6 €)</h3> <p>Sobresale unos 8-12 mm de la yema del dedo</p></div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Nail Art -->
+                <div class="grupo-reserva">
+                    <h2>4. Nail Art</h2>
+                    <p class="sub-label">Elige la decoración de tus uñas</p>
+                    <div class="opciones-lista">
+                        <label class="opcion-card">
+                            <input type="radio" name="nailart" value="Tier 1 (Básico / Cromo)" data-precio-art="6" checked>
+                            <div class="opcion-info">
+                                <h3>Tier 1 (Básico / Cromo) — +6 €</h3>
+                                <p>Acabados metálicos efecto espejo, polvos láser, efectos glaseados o líneas minimalistas.</p>
+                            </div>
+                        </label>
+                        <label class="opcion-card">
+                            <input type="radio" name="nailart" value="Tier 2 (Relieves / 3D)" data-precio-art="15">
+                            <div class="opcion-info">
+                                <h3>Tier 2 (Relieves / 3D) — +15 €</h3>
+                                <p>Gel con volumen 3D, efecto gotas, piercings en la uña, cadenas y pedrería pesada.</p>
+                            </div>
+                        </label>
+                        <label class="opcion-card">
+                            <input type="radio" name="nailart" value="Tier 3 (Full Custom)" data-precio-art="25">
+                            <div class="opcion-info">
+                                <h3>Tier 3 (Full Custom) — +25 €</h3>
+                                <p>Arte total hecho a mano, degradados con aerógrafo y mezclas de texturas sin límite creativo.</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- resumen -->
+            <aside class="resumen-reserva-sticky">
+                <div class="resumen-caja">
+                    <h3>Resumen de la cita</h3>
+                    <div class="resumen-item">
+                        <span>Servicio</span>
+                        <strong id="resumen-servicio">Stiletto Signature</strong>
+                    </div>
+                    <div class="resumen-item">
+                        <span>Forma</span>
+                        <strong id="resumen-forma">Almendradas</strong>
+                    </div>
+                    <div class="resumen-item">
+                        <span>Largura</span>
+                        <strong id="resumen-largura">S</strong>
+                    </div>
+                    <div class="resumen-item">
+                        <span>Nail Art</span>
+                        <strong id="resumen-art">Tier 1</strong>
+                    </div>
+                    <div class="resumen-total-fila">
+                        <span>TOTAL</span>
+                        <strong id="resumen-total">46 €</strong>
+                    </div>
+                </div>
+                <button type="button" class="boton boton--rosa" id="btn-siguiente-paso">SIGUIENTE</button>
+            </aside>
+
+        </form>
+    </section>
 
 
+    
 
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -45,6 +270,7 @@
     <script>
       feather.replace();
     </script>
+    <script src="../js/reservacita.js"></script>
     <script src="../js/app.js"></script>
 </body>
 </html>

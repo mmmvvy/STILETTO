@@ -246,7 +246,8 @@ b{
     pointer-events: none;
 }
 
-/* ----- carrito ----- */
+
+/* ----- [CARRITO] ----- */
 #carrito-menu {
     width: 26vw;
     height: 100vh;
@@ -268,6 +269,7 @@ b{
 .carrito-contenedor {
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .cerrar-carrito {
@@ -297,7 +299,7 @@ b{
     padding-bottom: 10px;
 }
 
-/* --- productos --- */
+/* productos  */
 #lista-carrito {
     display: flex;
     flex-direction: column;
@@ -370,23 +372,6 @@ b{
     cursor: pointer;
 }
 
-.carrito-item .numero-carrito {
-    font-size: 12px;
-}
-
-.btn-remove {
-    background: none;
-    border: none;
-    font-size: 10px;
-    font-family: var(--fuente-body);
-    text-decoration: underline;
-    cursor: pointer;
-    padding: 0;
-    margin-top: 4px;
-    text-align: left;
-    color: var(--color-texto);
-}
-
 .btn-remove {
     background: none;
     border: none;
@@ -398,12 +383,6 @@ b{
     margin-top: 4px;
     text-align: left;
     color: var(--color-texto);
-}
-
-.carrito-contenedor {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
 }
 
 /* --- subtotal --- */
@@ -469,7 +448,9 @@ b{
     opacity: 0.7;
 }
 
-/* ----- hero ----- */
+
+
+/* ----- [HERO] ----- */
 #hero {
     position: relative;
     width: 100%;
@@ -535,8 +516,10 @@ b{
     color: var(--color-secundario);
 }
 
-/* ----- carrusel ----- */
 
+
+
+/* ----- [CARRUSEL] ----- */
 .carrusel {
     position: relative;
     width: 100%;
@@ -626,7 +609,9 @@ b{
     transform: scale(1.15); 
 }
 
-/* ----- sobre nosotras ----- */
+
+
+/* ----- [SOBRE NOSOTRAS] ----- */
 #sobre {
     padding: 10px 50px;
     height: 95vh;
@@ -682,7 +667,7 @@ b{
 }
 
 
-/* ----- artists ----- */
+/* ----- [ARTISTS] ----- */
 #artists {
     padding: 60px 50px;
 }
@@ -750,7 +735,7 @@ b{
 }
 
 
-/* ----- comunidad ----- */
+/* ----- [COMUNIDAD] ----- */
 #comunidad {
     padding: 50px 50px;
 }
@@ -794,7 +779,7 @@ b{
 }
 
 
-/* ----- polaroids ----- */
+/* ----- [POLAROIDS] ----- */
 #polaroids {
     padding: 30px 40px;
     display: flex;
@@ -990,7 +975,8 @@ b{
     }
 }
 
-/* ----- ubicacion ----- */
+
+/* ----- [UBICACION] ----- */
 #ubicacion{
     display: flex;
     flex-wrap: wrap;
@@ -1010,12 +996,10 @@ b{
 }
 
 .titulo-ubicacion {
-    font-size: 3rem;
-    font-weight: 800;
-    line-height: 0.8;
     font-family: var(--fuente-titulos);
     font-size: var(--tamano-titulo);
     font-weight: lighter;
+    line-height: 0.8;
     padding-bottom: 1rem;
 }
 
@@ -1088,8 +1072,9 @@ b{
     object-fit: cover;
 }
 
-/* ----- SERVICIOS ----- */
-#servicios {
+
+/* ----- [SERVICIOS MENU] ----- */
+#servicios-menu {
     padding: 70px 50px;
 }
 
@@ -1105,7 +1090,7 @@ b{
 }
 
 .servicios-borde {
-    background-color: #fddff3b1;
+    border: 1px solid var(--color-texto);
     border-radius: 14px;
     padding: 30px 40px;
 }
@@ -1140,25 +1125,26 @@ b{
 }
 
 .servicios-lista li {
-    padding: 12px 6px;
-    border: 1px solid transparent;
+    padding: 12px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--color-texto);
 }
 
 .servicios-a .servicios-lista li:hover {
-    background-color: rgba(252, 44, 178, 0.4); 
     scale: 1.03;
     border-radius: 4px;
     transition: border var(--transicion), scale 0.2s ease, background-color 0.2s ease;
+    border: 1px solid var(--color-secundario);
 }
 
 .servicios-a .servicios-lista:hover li:not(:hover) {
-    background-color: rgba(252, 44, 178, 0.2); 
+    background-color: rgba(220, 220, 220, 0.424); 
     border-radius: 4px;
     transition: background-color 0.2s ease;
 }
 
 .servicios-lista li h3 {
-    font-family: var(--fuente-subtitulos);
+    font-family: var(--fuente-subsubtitulos);
     padding: 0 8px;
     font-weight: lighter;
 }
@@ -1195,6 +1181,10 @@ b{
     gap: 0px;
 }
 
+.servicios-b .servicios-borde .servicios-a-texto .servicios-lista li {
+    border: none;
+}
+
 .servicios-boton {
     display: flex;
     align-items: center;
@@ -1203,7 +1193,7 @@ b{
 }
 
 
-/* ----- lookbook ----- */
+/* ----- [LOOKBOOK] ----- */
 #lookbook {
     padding: 100px 50px 0 50px;
 }
@@ -1395,7 +1385,7 @@ b{
 
 
 
-/* ----- pressons----- */
+/* ----- [PRESS ONS] ----- */
 #pressons{
     padding: 80px 50px;
 }
@@ -1426,6 +1416,7 @@ b{
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 1.6px;
     cursor: pointer;
     transition: color var(--transicion), background-color var(--transicion), scale var(--transicion);
 }
@@ -1476,8 +1467,7 @@ b{
 }
 
 
-/* ----- vista ----- */
-
+/* ----- [VISTA] ----- */
 #vista {
     width: 100%;
     padding: 140px 50px 40px 50px;
@@ -1501,6 +1491,7 @@ b{
 .foto-doble {
     width: 100%;
     display: flex;
+    gap: 0.5rem; 
 }
 
 .vista-fotos-a {
@@ -1516,11 +1507,6 @@ b{
     display: block;
     object-fit: cover;
 }
-.foto-doble {
-    width: 100%;
-    display: flex;
-    gap: 0.5rem; 
-}
 
 .foto-doble img {
     width: calc(50% - 0.25rem); 
@@ -1530,7 +1516,7 @@ b{
 }
 
 
-/* --- COLUMNA DERECHA --- */
+/* dcha */
 .vista-info {
     display: flex;
     flex-direction: column;
@@ -1578,8 +1564,7 @@ b{
     font-size: 17px;
 }
 
-
-/* --- BOTONES --- */
+/* botones */
 .info-botones {
     display: flex;
     gap: 1.2rem;
@@ -1630,7 +1615,7 @@ b{
     scale: 1;
 }
 
-/* --- ACORDEÓN --- */
+/* ----- [ACORDEON] ----- */
 .acordeon {
     border-top: 1px solid var(--color-texto);
     width: 100%;
@@ -1706,7 +1691,7 @@ b{
     padding-left: 10px;
 }
 
-/* --- PRODUCTOS COMPLEMENTARIOS --- */
+/* productos complementarios */
 .producto-card {
     display: flex;
     align-items: center;
@@ -1772,6 +1757,578 @@ b{
     font-weight: lighter;
 }
 
+
+/* ----- [SERVICIOS] ----- */
+.servicios {
+    padding: 60px 50px;
+    font-family: var(--fuente-body);
+}
+
+.servicios a {
+    text-decoration: none;
+}
+
+.reserva-titulo {
+    font-family: var(--fuente-titulos);
+    font-size: var(--tamano-titulo);
+    font-weight: lighter;
+    margin-bottom: 20px;
+    padding-top: 18px;
+}
+
+.reserva-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 380px;
+    gap: 40px;
+    align-items: start;
+    justify-content: center;
+}
+
+.reserva-grid2 {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 40px;
+    align-items: start;
+    justify-content: center;
+    padding: 0 40px;
+}
+
+.reserva-grid3 {
+    display: grid;
+    grid-template-columns: 0.8fr 380px;
+    gap: 40px;
+    align-items: start;
+    justify-content: center;
+    padding: 40px 50px 0 50px;
+}
+
+.reserva-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.grupo-reserva h2 {
+    font-family: var(--fuente-subtitulos);
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.grupo-reserva .sub-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Opciones lista */
+.opciones-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.opcion-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 16px 20px;
+    border: 1px solid var(--color-texto);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--color-fondo);
+}
+
+.opcion-card:hover {
+    border-color: var(--color-secundario);
+}
+
+.opcion-card input[type="radio"] {
+    accent-color: var(--color-secundario);
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.opcion-info h3 {
+    font-family: var(--fuente-subsubtitulos);
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 0 4px 0;
+}
+
+.opcion-info p {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.opciones-grid-simple {
+    display: flex;
+    gap: 12px;
+}
+
+.chip-opcion {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px;
+    border: 1px solid var(--color-texto);
+    border-radius: 8px;
+    font-family: var(--fuente-subsubtitulos);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.chip-opcion:hover {
+    border-color: var(--color-secundario);
+}
+
+.chip-opcion input[type="radio"] {
+    accent-color: var(--color-secundario);
+    cursor: pointer;
+}
+
+/* Paso 2 y Calendario */
+.paso2-cabecera {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-volver {
+    font-family: var(--fuente-subsubtitulos);
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--color-texto);
+}
+
+.calendario-horas-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.calendario-caja {
+    border: 1px solid var(--color-texto);
+    border-radius: 8px;
+    padding: 20px;
+    background-color: var(--color-fondo);
+    width: 40vw;
+}
+
+#calendario-ui {
+    width: 100%;
+    background: transparent;
+    border: none;
+    font-family: var(--fuente-body);
+}
+
+#calendario-ui .ui-datepicker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-texto);
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#calendario-ui .ui-datepicker-title {
+    font-family: var(--fuente-subsubtitulos);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--color-texto);
+    font-weight: lighter;
+    order: 2;
+    margin: 0;
+}
+
+#calendario-ui .ui-datepicker-prev,
+#calendario-ui .ui-datepicker-next {
+    position: static;
+    cursor: pointer;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+#calendario-ui .ui-datepicker-prev { order: 1; }
+#calendario-ui .ui-datepicker-next { order: 3; }
+
+#calendario-ui .ui-datepicker-prev span,
+#calendario-ui .ui-datepicker-next span {
+    display: none;
+}
+
+#calendario-ui .ui-datepicker-prev::before {
+    content: "←";
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-texto);
+}
+
+#calendario-ui .ui-datepicker-next::before {
+    content: "→";
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-texto);
+}
+
+#calendario-ui .ui-datepicker-calendar {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 6px;
+    display: table;
+}
+
+#calendario-ui .ui-datepicker-calendar thead {
+    display: table-header-group;
+}
+
+#calendario-ui .ui-datepicker-calendar tr {
+    display: table-row;
+}
+
+#calendario-ui .ui-datepicker-calendar th,
+#calendario-ui .ui-datepicker-calendar td {
+    display: table-cell;
+    text-align: center;
+}
+
+#calendario-ui .ui-datepicker-calendar th {
+    font-family: var(--fuente-subsubtitulos);
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: normal;
+    padding-bottom: 8px;
+}
+
+#calendario-ui .ui-datepicker-calendar td a,
+#calendario-ui .ui-datepicker-calendar td span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 1;
+    background: var(--color-fondo);
+    border: 1px solid var(--color-texto);
+    border-radius: 4px;
+    color: var(--color-texto);
+    font-size: 0.9rem;
+    font-family: var(--fuente-body);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+#calendario-ui .ui-datepicker-calendar td a:hover {
+    border-color: var(--color-secundario);
+}
+
+#calendario-ui .ui-datepicker-calendar td.ui-datepicker-current-day a,
+#calendario-ui .ui-datepicker-calendar td a.ui-state-active {
+    background-color: var(--color-texto);
+    color: var(--color-fondo);
+    font-weight: bold;
+    border-color: var(--color-texto);
+}
+
+#calendario-ui .ui-datepicker-calendar td.ui-state-disabled span {
+    background: transparent;
+    border: 1px solid transparent;
+    color: #ccc;
+    opacity: 0.3;
+}
+
+/* Formularios */
+.form-reserva-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.grupo-formulario h2 {
+    font-family: var(--fuente-subtitulos);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.inputs-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.input-row-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.input-stiletto {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--color-fondo);
+    border: 1px solid var(--color-texto);
+    border-radius: 6px;
+    font-family: var(--fuente-body);
+    font-size: 0.95rem;
+    color: var(--color-texto);
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.input-stiletto::placeholder {
+    color: #888;
+}
+
+.input-stiletto:focus {
+    border-color: var(--color-secundario);
+}
+
+/* Contenedor de horas */
+.horas-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid var(--color-texto);
+    border-radius: 8px;
+    padding: 24px;
+    background-color: var(--color-fondo);
+    max-height: 280px;
+}
+
+.bloque-horario h3 {
+    font-family: var(--fuente-subsubtitulos);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.horas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn-hora {
+    padding: 10px 16px;
+    background: none;
+    border: 1px solid var(--color-texto);
+    border-radius: 6px;
+    font-family: var(--fuente-body);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-hora:hover {
+    border-color: var(--color-secundario);
+}
+
+.btn-hora.seleccionado {
+    background-color: var(--color-secundario);
+    border-color: var(--color-secundario);
+    color: var(--color-fondo);
+    font-weight: bold;
+}
+
+/* Resumen y caja amarilla */
+.resumen-reserva-sticky {
+    position: sticky;
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.resumen-caja {
+    border: 1px solid var(--color-texto);
+    padding: 25px;
+    border-radius: 8px;
+    background-color: var(--color-fondo);
+}
+
+.resumen-caja h3 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-texto);
+}
+
+.resumen-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.resumen-item span {
+    color: #666;
+}
+
+.resumen-item strong {
+    font-family: var(--fuente-subsubtitulos);
+    font-size: 0.95rem;
+    text-align: right;
+}
+
+.resumen-total-fila span {
+    font-family: var(--fuente-subsubtitulos);
+}
+
+.resumen-caja-amarilla {
+    background-color: var(--color-acento) !important;
+    border: 1px solid var(--color-texto);
+}
+
+.resumen-caja-amarilla h3 {
+    border-bottom: 1px solid var(--color-texto);
+    font-family: var(--fuente-subsubtitulos);
+}
+
+.separador-linea {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.cupon-contenedor {
+    margin: 20px 0 10px 0;
+}
+
+.cupon-contenedor .input-stiletto {
+    background: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    padding: 12px 14px;
+}
+
+.resumen-subtotal-fila {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+.resumen-total-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--color-texto);
+    font-family: var(--fuente-titulos);
+    font-size: 1.1rem;
+}
+
+.resumen-total-fila strong {
+    font-size: 1.3rem;
+    font-family: var(--fuente-subsubtitulos);
+    color: var(--color-texto);
+}
+
+/* Botones */
+.servicios .boton--rosa {
+    width: 100%;
+    font-family: var(--fuente-subsubtitulos);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-secundario);
+    color: var(--color-fondo);
+    font-size: 1rem;
+    padding: 14px 0;
+    text-transform: uppercase;
+    border-radius: 50px;
+    border: none;
+    outline: 1.5px solid var(--color-secundario);
+    outline-offset: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.servicios .boton--rosa:hover {
+    scale: 1.02;
+}
+
+.servicios .boton--rosa:disabled {
+    background-color: #e0e0e0;
+    outline-color: #e0e0e0;
+    color: #888;
+    cursor: not-allowed;
+    scale: 1;
+}
+
+.input-row-tres {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+.opcion-envio-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.opcion-envio-precio {
+    font-family: var(--fuente-subsubtitulos);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.resumen-item-producto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.resumen-item-cantidad {
+    font-size: 0.75rem;
+    color: #666;
+    margin: 0;
+}
+
+.resumen-fila-descuento {
+    display: none;
+    color: var(--color-secundario);
+}
+
+
+
+/* Media Query Responsive */
+@media (max-width: 900px) {
+    .reserva-grid {
+        grid-template-columns: 1fr;
+    }
+    .resumen-reserva-sticky {
+        position: static;
+    }
+    .opciones-grid-simple {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .input-row-tres {
+        grid-template-columns: 1fr;
+    }
+}
 
 
 /* ----- footer ----- */
@@ -1913,7 +2470,10 @@ footer {
     color: #ffffff;
     font-size: 1.2rem;
 }
-/* ---------- MEDIAQUERYS -- */
+
+
+
+/* ---------- MEDIAQUERYS --------- */
 
 /* -- Escritorio -- */
 @media (min-width: 768px) {
@@ -1943,8 +2503,6 @@ footer {
         display: none;
     }
 
-    /* !important porque jQuery deja un display en línea en el HTML
-       al plegar el menú en móvil; así el menú siempre se ve en escritorio */
     .menu {
         display: flex !important;
         gap: 1.5rem;
@@ -1967,4 +2525,3 @@ footer {
         padding-right: 0;
     }
 }
-

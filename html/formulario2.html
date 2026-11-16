@@ -36,7 +36,178 @@
         </nav>
     </header>
 
+    <section id="carrito-menu">
+        <div class="carrito-contenedor">
+            <div class="carrito-cabecera">
+                <h2>CARRITO</h2>
+                <button type="button" class="cerrar-carrito" aria-label="Cerrar carrito">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
 
+            <div id="lista-carrito"></div>
+
+            <section class="acordeon" id="esteticas">
+                <div class="acordeon__item">
+                    <button type="button" class="acordeon__titulo">
+                        COMPLETA TU SET
+                    </button>
+                    <div class="acordeon__contenido">
+                        <div class="producto-card">
+                            <div class="producto-image">
+                                <img src="../media/img/vista/v6.png" alt="">
+                            </div>
+                            <div class="producto-info">
+                                <h3>Stiletto pegamento de uñas 5g</h3>
+                                <p class="product-price">7 EUR</p>
+                            </div>
+                            <div class="producto-action">
+                                <button type="button" class="btn-add-to-cart">AÑADE AL CARRITO</button>
+                            </div>
+                        </div>
+                        <div class="producto-card">
+                            <div class="producto-image">
+                                <img src="../media/img/vista/v7.png" alt="">
+                            </div>
+                            <div class="producto-info">
+                                <h3>Stiletto kit</h3>
+                                <p class="product-price">20 EUR</p>
+                            </div>
+                            <div class="producto-action">
+                                <button type="button" class="btn-add-to-cart">AÑADE AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </section> 
+
+            <form class="compra" id="formulario-compra" novalidate>
+                <div class="compra__principal">
+                    <aside class="resumen" aria-labelledby="resumen-titulo">
+                        <dl class="resumen__cuentas">
+                            <div class="resumen__fila resumen__fila--total">
+                                <dt>Subtotal</dt>
+                                <dd id="total">0,00 €</dd>
+                            </div>
+                        </dl>
+                        <button type="submit" class="boton boton--rosa" id="boton-comprar" disabled>
+                            Comprar ahora
+                        </button>
+                    </aside>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <section class="servicios" id="checkout-seccion">
+        <div class="reserva-grid3">
+            
+            <!-- izq -->
+            <div class="form-reserva-wrapper">
+                
+                <!-- contacto -->
+                <div class="grupo-formulario">
+                    <h2>Contacto</h2>
+                    <div class="inputs-stack">
+                        <input type="email" id="ck-email" class="input-stiletto" placeholder="Email" required>
+                    </div>
+                </div>
+
+                <!-- direccion -->
+            <div class="input-row-tres">
+                <input type="text" id="ck-cp" class="input-stiletto" placeholder="Código postal" required>
+                <input type="text" id="ck-ciudad" class="input-stiletto" placeholder="Ciudad" required>
+                <input type="text" id="ck-provincia" class="input-stiletto" placeholder="Provincia" required>
+            </div>
+
+                <!-- envío -->
+                <div class="grupo-formulario">
+                    <h2>Método de envío</h2>
+                    <div class="opciones-lista">
+                        <label class="opcion-card">
+                            <input type="radio" name="metodo-envio" value="5" checked>
+                            <div class="opcion-info opcion-envio-info">
+                                <h3>Envío estándar</h3>
+                            </div>
+                            <span class="opcion-envio-precio">5.00 EUR</span>
+                        </label>
+                        <label class="opcion-card">
+                            <input type="radio" name="metodo-envio" value="15">
+                            <div class="opcion-info opcion-envio-info">
+                                <h3>Envío DHL</h3>
+                            </div>
+                            <span class="opcion-envio-precio">15.00 EUR</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- pago -->
+                <div class="grupo-formulario">
+                    <h2>Pago</h2>
+                    <div class="inputs-stack">
+                        <input type="text" id="ck-tarjeta" class="input-stiletto" placeholder="Número de tarjeta" required>
+                        <div class="input-row-doble">
+                            <input type="text" id="ck-exp" class="input-stiletto" placeholder="Fecha de expiración" required>
+                            <input type="text" id="ck-cvv" class="input-stiletto" placeholder="Código de seguridad" required>
+                        </div>
+                        <input type="text" id="ck-titular" class="input-stiletto" placeholder="Nombre de tarjeta" required>
+                    </div>
+                </div>
+
+                <button type="button" class="boton boton--rosa" id="btn-finalizar-checkout">AÑADE AL CARRITO</button>
+
+            </div>
+
+            <!-- resumen dcha-->
+            <aside class="resumen-reserva-sticky">
+                <div class="resumen-caja resumen-caja-amarilla">
+                    <h3 id="resumen-titulo">Productos</h3>
+                    
+                    <div id="checkout-lista-productos">
+                        <div class="resumen-item-producto">
+                            <div>
+                                <strong>Sweet Junk</strong>
+                                <p class="resumen-item-cantidad">1 PIEZA</p>
+                            </div>
+                            <strong>56 EUR</strong>
+                        </div>
+                        <div class="resumen-item-producto">
+                            <div>
+                                <strong>Acid Garden</strong>
+                                <p class="resumen-item-cantidad">1 PIEZA</p>
+                            </div>
+                            <strong>58 EUR</strong>
+                        </div>
+                    </div>
+
+                    <!-- descuento -->
+                    <div class="cupon-contenedor">
+                        <input type="text" id="input-cupon-checkout" class="input-stiletto" placeholder="Código de descuento">
+                    </div>
+                    
+                    <div class="resumen-item resumen-fila-descuento" id="ck-fila-descuento">
+                        <span>Descuento (10%)</span>
+                        <strong id="ck-monto-descuento">-0.00 EUR</strong>
+                    </div>
+
+                    <div class="resumen-subtotal-fila">
+                        <span>Subtotal</span>
+                        <span id="ck-subtotal">114 EUR</span>
+                    </div>
+                    <div class="resumen-subtotal-fila">
+                        <span>Envío</span>
+                        <span id="ck-envio">5.00 EUR</span>
+                    </div>
+
+                    <div class="resumen-total-fila">
+                        <span>TOTAL</span>
+                        <strong id="ck-total">119.00 EUR</strong>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </section>
 
 
 

@@ -1,4 +1,4 @@
-// MENU RESPONSIVE
+// [GENERAL] MENU RESPONSIVE
 
 $(".menu-btn").on("click", function () {
     $(".menu").slideToggle();
@@ -12,7 +12,7 @@ $(".menu a").on("click", function() {
 })
 
 
-// COMPORTAMIENTO DEL HEADER
+// [GENERAL] COMPORTAMIENTO DEL HEADER
 
 let ultimoScroll = 0;
 
@@ -39,52 +39,7 @@ $(window).on("scroll", function() {
 });
 
 
-
-
-// [SERVICIOS] HOVER FOTOS 
-
-$(document).ready(function() {
-    var fotoInicial = $("#foto-servicio").attr("src");
-
-    $(".servicio-item").on("mouseenter", function() {
-        var nuevaFoto = $(this).data("foto");
-        
-        $("#foto-servicio").fadeOut(120, function() {
-            $(this).attr("src", nuevaFoto).fadeIn(150);
-        });
-    });
-
-    $(".servicios-a").on("mouseleave", function() {
-        $("#foto-servicio").fadeOut(120, function() {
-            $(this).attr("src", fotoInicial).fadeIn(150);
-        });
-    });
-});
-
-
-// [PRESSON] FILTROS
-
-$(document).ready(function() {
-    $('.filtro').on('click', function() {
-
-        $('.filtro').removeClass('is-activo');
-        $(this).addClass('is-activo');
-
-        var tipoSeleccionado = $(this).attr('data-tipo');
-
-        $('.pressons').each(function() {
-            var tipoCard = $(this).attr('data-tipo'); 
-            if (tipoSeleccionado === 'todos' || tipoCard.includes(tipoSeleccionado)) {
-                $(this).show(); 
-            } else {
-                $(this).hide(); 
-            }
-        });
-    });
-});
-
-// [VISTA] ACORDEON
-
+// [GENERAL] ACORDEON
 
 $(".acordeon__titulo").on("click", function() {
     var contenido = $(this).next();
@@ -98,38 +53,7 @@ $(".acordeon__titulo").on("click", function() {
 })
 
 
-// [VISTA] CARRUSEL
-
-var pista = $(".carrusel__pista");
-var pressons = $(".presson");
-var botonNext = $("#siguiente");
-var botonPrev = $("#anterior");
-
-var indice = 0;
-var totalPressons = pressons.length;
-var visibles = 4;
-
-function actualizarCarrusel() {
-    var desplazamiento = indice * (100 / visibles);
-    pista.css("transform", "translateX(-" + desplazamiento + "%)");
-}
-
-botonNext.on("click", function() {
-    if (indice < totalPressons - visibles) {
-        indice++;
-        actualizarCarrusel();
-    }
-});
-
-botonPrev.on("click", function() {
-    if (indice > 0) {
-        indice--;
-        actualizarCarrusel();
-    }
-});
-
-
-// CARRITO
+// [GENERAL] CARRITO
 
 //1. DATOS Y ELEMENTOS 
 var MAXIMO_POR_TIPO = 10;       
@@ -148,11 +72,9 @@ var $iconoCarrito = $('a[href="#carrito"]');
 var $carritoMenu = $('#carrito-menu');
 var $botonCerrarCarrito = $('.cerrar-carrito');
 
-// Convierte un número en precio con formato español: 12.5 → "12,50 €"
 function formatearPrecio(numero) {
     return numero.toFixed(2).replace('.', ',') + ' €';
 }
-
 
 //2. CÁLCULO DEL TOTAL
 function actualizarCarrito() {
@@ -331,3 +253,100 @@ if ($botonCerrarCarrito.length) {
 }
 
 actualizarCarrito();
+
+
+// 7. IR AL FORMULARIO
+$botonComprar.on('click', function (e) {
+    e.preventDefault();
+
+    if (carrito.length === 0) return;
+
+    sessionStorage.setItem('carritoStiletto', JSON.stringify(carrito));
+    window.location.href = 'formulario2.html';
+});
+
+
+
+// [GENERAL] FORMULARIO CARRITO
+
+$(document).ready(function () {
+
+    if ($('#checkout-lista-productos').length) {
+        var carritoGuardado = sessionStorage.getItem('carritoStiletto');
+        var productos = carritoGuardado ? JSON.parse(carritoGuardado) : [
+            { nombre: "Sweet Junk", cantidad: 1, precio: 56 },
+            { nombre: "Acid Garden", cantidad: 1, precio: 58 }
+        ];
+
+        function renderizarResumenCheckout() {
+            var htmlProductos = '';
+            var subtotal = 0;
+
+            productos.forEach(function (prod) {
+                var totalProd = prod.precio * prod.cantidad;
+                subtotal += totalProd;
+                
+                htmlProductos += `
+                    <div class="resumen-item-producto">
+                        <div>
+                            <strong>${prod.nombre}</strong>
+                            <p class="resumen-item-cantidad">${prod.cantidad} PIEZA${prod.cantidad > 1 ? 'S' : ''}</p>
+                        </div>
+                        <strong>${totalProd.toFixed(2)} EUR</strong>
+                    </div>
+                `;
+            });
+
+            $('#checkout-lista-productos').html(htmlProductos);
+            $('#ck-subtotal').text(subtotal.toFixed(2) + ' EUR');
+            
+            calcularTotalFinal(subtotal);
+        }
+
+        function calcularTotalFinal(subtotal) {
+            var costoEnvio = parseFloat($('input[name="metodo-envio"]:checked').val()) || 5.00;
+            $('#ck-envio').text(costoEnvio.toFixed(2) + ' EUR');
+
+            var totalConEnvio = subtotal + costoEnvio;
+
+            var codigo = ($('#input-cupon-checkout').val() || '').trim().toUpperCase();
+            if (codigo === 'BIENVENIDA') {
+                var descuento = subtotal * 0.10;
+                $('#ck-monto-descuento').text('-' + descuento.toFixed(2) + ' EUR');
+                $('#ck-fila-descuento').show();
+                totalConEnvio -= descuento;
+            } else {
+                $('#ck-fila-descuento').hide();
+            }
+
+            $('#ck-total').text(totalConEnvio.toFixed(2) + ' EUR');
+        }
+
+        $('input[name="metodo-envio"]').on('change', function () {
+            var subtotal = parseFloat($('#ck-subtotal').text()) || 0;
+            calcularTotalFinal(subtotal);
+        });
+
+        $('#input-cupon-checkout').on('input', function () {
+            var subtotal = parseFloat($('#ck-subtotal').text()) || 0;
+            calcularTotalFinal(subtotal);
+        });
+
+        $('#btn-finalizar-checkout').on('click', function () {
+            var email = $('#ck-email').val();
+            var tarjeta = $('#ck-tarjeta').val();
+
+            if (!email || !tarjeta) {
+                alert('Por favor, completa los campos obligatorios de contacto y pago.');
+                return;
+            }
+
+            alert('¡Pedido realizado con éxito! Gracias por confiar en Stiletto.');
+            sessionStorage.removeItem('carritoStiletto');
+            window.location.href = 'index.html';
+        });
+
+        renderizarResumenCheckout();
+    }
+    });
+
