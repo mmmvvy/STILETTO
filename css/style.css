@@ -3061,6 +3061,94 @@ footer {
     .footer_bloque h4 {
         margin-left: 12px;
     }
+
+        .calendario-horas-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .calendario-caja {
+        width: 100%;
+    }
+
+    /* El grid de 3 columnas de inputs pasa a 2 en tablet */
+    .input-row-tres {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* El resumen deja de ser sticky en tablet para evitar solapamientos */
+    .resumen-reserva-sticky {
+        position: static;
+        top: auto;
+    }
+
+    .form-reserva-wrapper {
+        gap: 24px;
+    }
+}
+
+
+/* --- MÓVIL (hasta 436px) --- */
+@media (max-width: 436px) {
+    .calendario-horas-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .calendario-caja {
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* Inputs dobles y triples se apilan a 1 sola columna en móvil */
+    .input-row-doble,
+    .input-row-tres {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .form-reserva-wrapper {
+        gap: 20px;
+        padding: 10px 0;
+    }
+
+    .grupo-formulario h2 {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+
+    .input-stiletto {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+
+    /* Contenedor de horas adaptado */
+    .horas-contenedor {
+        padding: 16px;
+        max-height: 240px;
+    }
+
+    .btn-hora {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .resumen-caja {
+        padding: 18px;
+    }
+
+    .resumen-caja h3 {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .resumen-total-fila {
+        font-size: 1rem;
+    }
+
+    .resumen-total-fila strong {
+        font-size: 1.15rem;
+    }
 }
 
 
