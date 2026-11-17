@@ -6,6 +6,7 @@
     <title>STILETTO</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../media/img/logonegro.svg">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <!-- ============ CABECERA CON MENÚ RESPONSIVE ============ -->
@@ -13,7 +14,7 @@
     <p>📩 10% OFF en tu primer pedido de Press On Nails con el código: <b>BIENVENIDA</b></p>
    </div>
     <header class="cabecera">
-        <div class="cabecera__barra">
+        <div class="cabecera__barra" data-aos="fade-down">
             <a href="index.html" class="logo"><img src="../media/img/logonegro.svg" alt=""></a>
 
             <!-- Solo se ve en móvil -->
@@ -25,7 +26,7 @@
         </div>
 
         <!-- En móvil está oculto hasta pulsar el botón -->
-        <nav class="menu">
+        <nav class="menu" data-aos="fade-down">
             <a href="servicios.html">SERVICIOS</a>
             <a href="presson.html">PRESS ON</a>
             <a href="lookbook.html">LOOKBOOK</a>
@@ -105,8 +106,8 @@
         <div class="hero-img">
             <img src="../media/img/index/hero.jpg" alt="">
         </div>
-        <div class="hero-content">
-            <h1>
+        <div class="hero-content" data-aos="fade-up">
+            <h1> 
             El mundo es <span class="cursiva"> demasiado</span> aburrido para no hacerse las uñas. 
             Rompe las reglas con Stiletto.
             </h1>
@@ -267,8 +268,8 @@
 
         <!-- Controles -->
         <div class="carrusel__controles">
-            <button type="button" class="boton" id="anterior"><i data-feather="arrow-left-circle"></i></button>
-            <button type="button" class="boton" id="siguiente"><i data-feather="arrow-right-circle"></i></button>
+            <button data-aos="fade-right"type="button" class="boton" id="anterior"><i data-feather="arrow-left-circle"></i></button>
+            <button data-aos="fade-left"type="button" class="boton" id="siguiente"><i data-feather="arrow-right-circle"></i></button>
         </div>
     </section>
 
@@ -280,7 +281,7 @@
                     <h1><span class="cursiva">Sobre</span> nosotras</h1>
                     <p>No somos un salón de uñas convencional. En Stiletto entendemos la manicura como una extensión de tu actitud: exceso, volumen y cero filtros. Cansadas de lo aburrido, creamos piezas de arte urbano para quienes prefieren llamar la atención antes que pasar desapercibidas. Aquí tus manos mandan.</p>
                 </div>
-                <div class="sobre-fotos-pequenas">
+                <div class="sobre-fotos-pequenas" >
                     <img src="../media/img/index/sobre1.jpg" alt="">
                     <img src="../media/img/index/sobre2.jpg" alt="">
 
@@ -294,7 +295,7 @@
 
     <section id="artists">
         <div class="artists-contenedor">
-            <div class="artists-izq">
+            <div class="artists-izq" >
                 <img src="../media/img/index/artistas1.jpg" alt="Nail Artist">
             </div>
             <div class="artists-dcha">
@@ -302,19 +303,23 @@
                     <h1>Nuestras <br> <span class="cursiva">nail</span> artists</h1>
                 </div>
                 <div class="dcha-fotos">
-                    <div class="artist-card">
+                    <div class="artist-card" data-aos="zoom-in-up" 
+     data-aos-duration="800">
                         <img src="../media/img/index/artistas2.png" alt="">
                         <p>@sssscarmen</p>
                     </div>
-                    <div class="artist-card">
+                    <div class="artist-card" data-aos="zoom-in-up" 
+     data-aos-duration="800"  data-aos-delay="300">
                         <img src="../media/img/index/artistas5 .png" alt="">
                         <p>@holyyouu</p>
                     </div>
-                    <div class="artist-card">
+                    <div class="artist-card" data-aos="zoom-in-up"  
+     data-aos-duration="800"  data-aos-delay="600">
                         <img src="../media/img/index/artistas3.png" alt="">
                         <p>@pppaitt</p>
                     </div>
-                    <div class="artist-card">
+                    <div class="artist-card" data-aos="zoom-in-up" 
+     data-aos-duration="800"  data-aos-delay="900">
                         <img src="../media/img/index/artistas6.png" alt="">
                         <p>@saintchris</p>
                     </div>
@@ -332,7 +337,7 @@
             <p class="direccion">
                 Nos ubicamos en calle en Calle Manuela Malasaña 26, Madrid, 28004
             </p>
-            <div class="tabla-horarios">
+            <div class="tabla-horarios"  data-aos="fade-right" data-aos-duration="1000">
                 <div class="cinta-adhesiva"></div>
                 <div class="columna-dias">
                     <div class="dia-item">
@@ -417,7 +422,7 @@
             </div>
             <div class="cta-cita">
                 <h2>¡Pide tu cita!</h2>
-                <a href="reserva1.html" class="btn-reserva">RESERVA YA</a>
+                <a data-aos="zoom-in" href="reserva1.html" class="btn-reserva">RESERVA YA</a>
             </div>
         </div>
     </section>

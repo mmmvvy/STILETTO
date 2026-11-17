@@ -6,6 +6,7 @@
     <title>STILETTO</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../media/img/logonegro.svg">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <!-- ============ CABECERA CON MENÚ RESPONSIVE ============ -->
@@ -105,13 +106,13 @@
             <div class="p-cabecera">
                 <h1>Our <span class="cursiva">iconic </span>press on</h1>
             </div>
-            <div class="p-filtros"  aria-label="Filtrar por tipo">
+            <div class="p-filtros" data-aos="fade-up" data-aos-duration="1000" aria-label="Filtrar por tipo">
                 <button type="button" class="filtro" data-tipo="todos">Todos</button>
                 <button type="button" class="filtro" data-tipo="stiletto">Stiletto</button>
                 <button type="button" class="filtro" data-tipo="almond">Almond</button>
                 <button type="button" class="filtro" data-tipo="square">Square</button>
             </div>
-            <div class="p-grid">
+            <div class="p-grid" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200" >
                 <!-- Presson 1 -->
                 <div class="pressons" data-tipo="stiletto maximalist">
                     <img src="../media/img/pressons/p1.png" alt="">
@@ -395,6 +396,8 @@
      <!-- tribal -->
      <img src="../media/img/tribal.svg" alt="" class="tribal">
 
+     <!-- JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script>

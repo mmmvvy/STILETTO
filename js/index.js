@@ -131,3 +131,8 @@ $(document).ready(function () {
         }
     });
 });
+
+// AOS LIBRERIA
+AOS.init({
+   duration: 950
+});
