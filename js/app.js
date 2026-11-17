@@ -392,3 +392,7 @@ $(document).ready(function () {
 AOS.init({
    duration: 950
 });
+
+AOS.init({
+  disable: window.innerWidth < 960
+});

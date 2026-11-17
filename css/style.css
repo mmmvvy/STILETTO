@@ -3066,6 +3066,8 @@ footer {
 
 /* --- MÓVIL (hasta 436px) --- */
 @media (max-width: 436px) {
+
+    
     .cabecera_oferta {
         height: auto;
         padding: 6px 12px;
