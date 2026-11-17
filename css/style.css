@@ -1298,18 +1298,20 @@ b{
     right: 50%;
     margin-left: -50vw; 
     margin-right: -50vw;
-    padding: 60px 0;
+    padding: 80px 0 60px 0;
 }
 
 .look-video video {
-    width: 100%;     
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    display: block;
 }
-
 /* marquesina */
 .comunidad-marquee{
     width: 100%;
     overflow: hidden;
-    padding: 30px 0 160px 0;
+    padding: 30px 0 100px 0;
     position: relative;
 }
 
@@ -2765,7 +2767,7 @@ footer {
         text-align: left;
     }
 
-    /* Polaroids interactivas */
+    /* Polaroids */
     #polaroids {
         display: none;
     }
@@ -2797,12 +2799,11 @@ footer {
         flex-direction: column;
     }
      #servicios-menu {
-        padding: 110px 30px 40px 30px; /* Espacio extra arriba por la cabecera fixed/absolute */
+        padding: 110px 30px 40px 30px; 
     }
 
-    /* Caja principal: Sets Completos + Imagen */
     .servicios-a {
-        flex-direction: column-reverse; /* Pone la foto arriba y la lista debajo */
+        flex-direction: column-reverse; 
         gap: 20px;
     }
 
@@ -2820,30 +2821,130 @@ footer {
         object-fit: cover;
     }
 
-    /* Cajas inferiores: Nail Art y Mantenimiento apiladas */
     .servicios-b {
         flex-direction: column;
         gap: 20px;
     }
 
-    /* Botón de cita centrado */
     .servicios-boton {
         justify-content: center;
         width: 100%;
     }
+    #lookbook {
+        padding: 110px 30px 0 30px;
+    }
+
+    .cab-b {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .cab-b img {
+        width: 100%;
+        height: 400px;
+    }
+    .cab-b .cta-cita {
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    .cab-c p {
+        font-size: 36px;
+    }
+
+    .look-content {
+        padding-top: 50px;
+    }
+    .cont-a {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+    .a-img {
+        width: 100%;
+        flex-direction: row;
+        gap: 15px;
+    }
+    .a-img img:first-child,
+    .a-img img:last-child {
+        width: calc(50% - 7.5px);
+        max-height: 360px;
+        object-fit: cover;
+        align-self: stretch;
+    }
+    .cont-a .a-pressons {
+        max-width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .cont-a .a-pressons .presson {
+        flex: 0 0 calc(33.33% - 10px);
+    }
+
+    .look-video {
+        padding: 40px 0;
+    }
+
+    /* Marquesina */
+    .comunidad-marquee {
+        padding: 20px 0 90px 0;
+    }
+    .comunidad-item img {
+        max-height: 280px;
+    }
+
+    .look-final {
+        padding: 20px 30px 50px 30px;
+    }
+    .look-final-b img {
+        max-width: calc(50% - 0.5rem);
+        width: 100%;
+    }
+
+    .look-final-b img:nth-child(6), img:nth-child(7), img:nth-child(8), img:nth-child(9), img:nth-child(10), img:nth-child(11)    {
+        display: none;
+    }
+        #vista {
+        padding: 110px 30px 40px 30px;
+    }
+
+    .vista-contenedor {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .vista-fotos {
+        max-width: 100%;
+    }
+
+    .vista-info {
+        position: static;
+        padding: 0;
+        gap: 1.5rem;
+    }
+
+    .tmb {
+        padding: 0 10px;
+        font-size: 26px;
+        margin-bottom: -10px;
+    }
+    .vista-info .btn-reserva {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    text-align: center;
+}
 }
 
 
 /* --- MÓVIL (hasta 436px) --- */
 @media (max-width: 436px) {
-    /* Barra oferta superior */
     .cabecera_oferta {
         height: auto;
         padding: 6px 12px;
         font-size: 11px;
     }
 
-    /* Menú desplegable móvil legible sobre el Hero */
     .cabecera .menu-btn span {
         background-color: var(--color-fondo);
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
@@ -2974,7 +3075,7 @@ footer {
         height: 400px;
     }
 
-    /* Pop-up Cookies en móvil */
+    /* Cookies*/
     .cookie-banner {
         width: calc(100% - 30px);
         right: -100%;
@@ -3026,102 +3127,13 @@ footer {
         padding: 4px 0 0 0;
     }
 
-    /* Botón final adaptado al ancho móvil */
     .servicios-boton .btn-reserva {
         width: 100%;
         padding: 16px 20px;
         font-size: 1.1rem;
         text-align: center;
     }
-}
 
-
-/* ==========================================================================
-   RESPONSIVE LOOKBOOK.HTML (TABLET 960px Y MÓVIL 436px)
-   ========================================================================== */
-
-/* --- TABLET (hasta 960px) --- */
-@media (max-width: 960px) {
-    #lookbook {
-        padding: 110px 30px 0 30px;
-    }
-
-    /* Cabecera: foto grande + CTA apilados */
-    .cab-b {
-        flex-direction: column;
-        gap: 25px;
-    }
-    .cab-b img {
-        width: 100%;
-        height: 400px;
-    }
-    .cab-b .cta-cita {
-        width: 100%;
-        padding: 15px 0;
-    }
-
-    /* Frase editorial */
-    .cab-c p {
-        font-size: 36px;
-    }
-
-    /* Contenido editorial: Press-ons + 2 fotos grandes */
-    .look-content {
-        padding-top: 50px;
-    }
-    .cont-a {
-        flex-direction: column-reverse;
-        gap: 40px;
-    }
-    .a-img {
-        width: 100%;
-        flex-direction: row;
-        gap: 15px;
-    }
-    .a-img img:first-child,
-    .a-img img:last-child {
-        width: calc(50% - 7.5px);
-        max-height: 360px;
-        object-fit: cover;
-        align-self: stretch;
-    }
-    .cont-a .a-pressons {
-        max-width: 100%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-    .cont-a .a-pressons .presson {
-        flex: 0 0 calc(33.33% - 10px);
-    }
-
-    /* Vídeo ancho completo */
-    .look-video {
-        padding: 40px 0;
-    }
-
-    /* Marquesina */
-    .comunidad-marquee {
-        padding: 20px 0 90px 0;
-    }
-    .comunidad-item img {
-        max-height: 280px;
-    }
-
-    /* Galería final (2 columnas en tablet) */
-    .look-final {
-        padding: 20px 30px 50px 30px;
-    }
-    .look-final-b img {
-        max-width: calc(50% - 0.5rem);
-        width: 100%;
-    }
-}
-
-
-/* --- MÓVIL (hasta 436px) --- */
-@media (max-width: 436px) {
     #lookbook {
         padding: 100px 10px 0 10px;
     }
@@ -3145,7 +3157,6 @@ footer {
         line-height: 1.25;
     }
 
-    /* Contenido editorial */
     .look-content {
         padding-top: 35px;
     }
@@ -3168,21 +3179,15 @@ footer {
 
     /* Vídeo */
     .look-video {
-        padding: 30px 0;
+        display: none;
     }
 
     /* Marquesina */
     .comunidad-marquee {
-        padding: 10px 0 60px 0;
-    }
-    .comunidad-track {
-        gap: 16px;
-    }
-    .comunidad-item img {
-        max-height: 220px;
+        display: none;
     }
 
-    /* Galería final (1 columna en móvil) */
+    /* Galería*/
     .look-final {
         padding: 10px 20px 40px 20px;
     }
@@ -3192,5 +3197,185 @@ footer {
     }
     .look-final-b img {
         max-width: 100%;
+    }
+        .servicios {
+        padding: 100px 20px 30px 20px;
+    }
+
+    .reserva-titulo {
+        font-size: 32px;
+        padding-top: 0;
+    }
+
+    .grupo-reserva h2,
+    .grupo-formulario h2 {
+        font-size: 1rem;
+    }
+
+    /* Tarjetas*/
+    .opcion-card {
+        padding: 14px;
+        gap: 10px;
+    }
+
+    .opciones-grid-simple {
+        flex-direction: column;
+    }
+
+    .chip-opcion {
+        width: 100%;
+    }
+
+    /* Filas*/
+    .input-row-doble,
+    .input-row-tres {
+        grid-template-columns: 1fr;
+    }
+
+    /* Calendario y botones */
+    .calendario-caja {
+        padding: 12px;
+    }
+
+    #calendario-ui .ui-datepicker-calendar {
+        border-spacing: 3px;
+    }
+
+    #calendario-ui .ui-datepicker-calendar td a,
+    #calendario-ui .ui-datepicker-calendar td span {
+        font-size: 0.8rem;
+    }
+
+    .horas-contenedor {
+        padding: 16px;
+    }
+
+    .horas-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .btn-hora {
+        padding: 10px 6px;
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+    .resumen-caja {
+        padding: 20px 16px;
+    }
+
+    .servicios .boton--rosa {
+        font-size: 0.95rem;
+        padding: 14px 10px;
+    }
+
+        #vista {
+        padding: 100px 20px 30px 20px;
+    }
+
+    .vista-contenedor {
+        gap: 1.8rem;
+    }
+
+    .foto-doble {
+        flex-direction: column;
+    }
+
+    .foto-doble img {
+        width: 100%;
+    }
+
+    .info-text h2 {
+        font-size: 1.75rem;
+    }
+
+    .info-text p:last-child {
+        font-size: 15px;
+    }
+
+    /* Selector de cantidad  */
+    .info-botones {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .cantidad-selector {
+        width: 100%;
+        height: 44px;
+    }
+
+    .vista-info .btn-reserva {
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+
+    .producto-card {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        padding: 8px 0;
+    }
+
+    .producto-image img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .producto-action {
+        width: 100%;
+    }
+
+    .producto-action .btn-add-to-cart {
+        width: 100%;
+        padding: 10px 0;
+        outline-offset: 3px;
+    }
+
+    /* Título*/
+    .tmb {
+        padding: 0 5px;
+        font-size: 22px;
+        margin-bottom: 0;
+    }
+
+        .servicios {
+        padding: 110px 30px 40px 30px;
+    }
+
+    .reserva-grid,
+    .reserva-grid2,
+    .reserva-grid3 {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0;
+    }
+
+    .resumen-reserva-sticky {
+        position: static;
+    }
+
+    /* Calendario*/
+    .calendario-horas-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .calendario-caja {
+        width: 100%;
+    }
+
+    .horas-contenedor {
+        max-height: none;
+    }
+
+    /* Chips de opciones  */
+    .opciones-grid-simple {
+        flex-wrap: wrap;
+    }
+
+    .chip-opcion {
+        flex: 1 1 calc(50% - 12px);
     }
 }
