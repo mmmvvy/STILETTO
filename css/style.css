@@ -2308,28 +2308,6 @@ b{
     color: var(--color-secundario);
 }
 
-
-
-/* Media Query Responsive */
-@media (max-width: 900px) {
-    .reserva-grid {
-        grid-template-columns: 1fr;
-    }
-    .resumen-reserva-sticky {
-        position: static;
-    }
-    .opciones-grid-simple {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 600px) {
-    .input-row-tres {
-        grid-template-columns: 1fr;
-    }
-}
-
-
 /* ----- footer ----- */
 footer {
     background-color: var(--color-secundario);
@@ -2709,13 +2687,510 @@ footer {
     }
 }
 
-/* moviles */
-@media (max-width: 768px) {
-    .ubicacion-section {
+/* --- TABLET (hasta 960px) --- */
+@media (max-width: 960px) {
+
+    #carrito-menu {
+        width: 45vw;
+        right: -45vw;
+    }
+
+    .presson {
+        flex: 0 0 calc(50% - 0.5rem);
+        max-width: none;
+    }
+
+    /* Sobre nosotras */
+    #sobre {
+        height: auto;
+        padding: 20px 30px;
+    }
+    #sobre .sobre-contenedor {
         flex-direction: column;
-        gap: 40px;
+        gap: 2rem;
+    }
+    #sobre .sobre-fotos-pequenas {
+        flex-direction: row;
+        max-width: 100%;
+    }
+    #sobre .sobre-fotos-pequenas img {
+        width: 50%;
+    }
+    #sobre .sobre-contenedor .sobre-dcha img {
+        display: none;
+    }
+
+    /* Nail Artists */
+    #artists {
+        padding: 0 30px 30px 30px;
+    }
+    #artists .artists-contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+    #artists .artists-izq {
+        position: static;
+        width: 100%;
+    }
+    #artists .artists-izq img {
+        display: none;
+    }
+    #artists .artists-dcha .dcha-texto {
+        padding-top: 2rem;
+    }
+    #artists .artists-dcha .dcha-fotos {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+    #artists .artists-dcha .dcha-fotos .artist-card {
+        width: calc(50% - 1rem);
+    }
+    #artists .artists-dcha .dcha-fotos .artist-card img {
+        width: 100%;
+    }
+
+    /* Ubicación y horarios */
+    #ubicacion {
+        padding: 40px 30px;
+        gap: 2rem;
     }
     .contenido-info {
         padding-right: 0;
+        align-items: center;
+        text-align: center;
+    }
+    .tabla-horarios {
+        text-align: left;
+    }
+
+    /* Polaroids interactivas */
+    #polaroids {
+        display: none;
+    }
+
+    /* Comunidad (Vídeos) */
+    #comunidad {
+        padding: 40px 30px;
+    }
+    #comunidad .comunidad-contenedor {
+        flex-direction: column;
+    }
+    #comunidad .comunidad-texto {
+        max-width: 100%;
+    }
+    #comunidad .comunidad-galeria {
+        width: 100%;
+    }
+    #comunidad .comunidad-galeria video {
+        height: 450px;
+    }
+
+    .reserva-grid {
+        grid-template-columns: 1fr;
+    }
+    .resumen-reserva-sticky {
+        position: static;
+    }
+    .opciones-grid-simple {
+        flex-direction: column;
+    }
+     #servicios-menu {
+        padding: 110px 30px 40px 30px; /* Espacio extra arriba por la cabecera fixed/absolute */
+    }
+
+    /* Caja principal: Sets Completos + Imagen */
+    .servicios-a {
+        flex-direction: column-reverse; /* Pone la foto arriba y la lista debajo */
+        gap: 20px;
+    }
+
+    .servicios-borde .servicios-a .servicios-a-texto {
+        max-width: 100%;
+    }
+
+    .servicios-imagen {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .servicios-imagen img {
+        max-height: 350px;
+        object-fit: cover;
+    }
+
+    /* Cajas inferiores: Nail Art y Mantenimiento apiladas */
+    .servicios-b {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Botón de cita centrado */
+    .servicios-boton {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+
+/* --- MÓVIL (hasta 436px) --- */
+@media (max-width: 436px) {
+    /* Barra oferta superior */
+    .cabecera_oferta {
+        height: auto;
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+
+    /* Menú desplegable móvil legible sobre el Hero */
+    .cabecera .menu-btn span {
+        background-color: var(--color-fondo);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    }
+    .cabecera.scrolled .menu-btn span {
+        background-color: var(--color-texto);
+        box-shadow: none;
+    }
+    .cabecera .menu {
+        background-color: var(--color-fondo);
+        color: var(--color-texto);
+        text-shadow: none;
+        border-bottom: 1px solid var(--color-texto);
+        padding: 1rem 2rem;
+    }
+    .cabecera .menu a {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    /* Carrito a pantalla completa */
+    #carrito-menu {
+        width: 100vw;
+        right: -100vw;
+        border-left: none;
+    }
+
+    /* Hero */
+    #hero {
+        height: 65vh;
+    }
+    .hero-content {
+        bottom: 30px;
+        left: 20px;
+        right: 20px;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+        line-height: 1.15;
+        margin-bottom: 18px;
+    }
+    .btn-principal {
+        padding: 12px 28px;
+        font-size: 0.9rem;
+    }
+
+    /* Carrusel*/
+    .carrusel {
+        padding: 20px 15px;
+    }
+    .presson {
+        flex: 0 0 100%;
+    }
+    .carrusel__controles {
+        padding: 0 5px;
+    }
+    .carrusel__controles button svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* Sobre nosotras  */
+    #sobre {
+        padding: 10px 20px 10px 20px;
+    }
+    #sobre .sobre-contenedor .sobre-izq .sobre-texto h1 {
+        font-size: 32px;
+    }
+    #sobre .sobre-contenedor .sobre-izq .sobre-texto p {
+        font-size: 16px;
+    }
+
+    #sobre .sobre-fotos-pequenas img{
+        display: none;
+    }
+
+    /* Nail Artists */
+    #artists {
+        padding: 0 20px 30px 20px;
+    }
+    #artists .artists-dcha .dcha-texto {
+        padding-top: 1rem;
+    }
+    #artists .artists-dcha .dcha-texto h1 {
+        font-size: 40px;
+    }
+    #artists .artists-dcha .dcha-texto h1 span {
+        font-size: 42px;
+    }
+    #artists .artists-dcha .dcha-fotos {
+        gap: 1.5rem;
+    }
+    #artists .artists-dcha .dcha-fotos .artist-card {
+        width: 100%;
+    }
+
+    /* Ubicación y horarios */
+    #ubicacion {
+        padding: 30px 20px;
+    }
+    .contenido-info {
+        min-width: 100%;
+    }
+    .titulo-ubicacion {
+        font-size: 32px;
+    }
+    .tabla-horarios {
+        padding: 20px;
+        max-width: 100%;
+        transform: rotate(0deg);
+    }
+
+    .ubi-img {
+        display: none;
+    }
+
+    /* Comunidad */
+    #comunidad {
+        padding: 30px 20px;
+    }
+    #comunidad .comunidad-texto h1 {
+        font-size: 32px;
+    }
+    #comunidad .comunidad-galeria {
+        flex-direction: column;
+    }
+    #comunidad .comunidad-galeria video {
+        width: 100%;
+        height: 400px;
+    }
+
+    /* Pop-up Cookies en móvil */
+    .cookie-banner {
+        width: calc(100% - 30px);
+        right: -100%;
+        bottom: 15px;
+    }
+    .cookie-banner.activo {
+        right: 15px;
+    }
+
+    .tribal {
+        display: none;
+    }
+
+    .input-row-tres {
+        grid-template-columns: 1fr;
+    }
+
+    #servicios-menu {
+        padding: 100px 10px 30px 10px;
+    }
+
+    .servicio-cabecera h1 {
+        font-size: 32px;
+    }
+
+    .servicios-borde {
+        padding: 20px 16px;
+    }
+
+    .servicios-a-texto h2 {
+        font-size: 26px;
+    }
+
+    .servicios-imagen img {
+        max-height: 240px;
+    }
+
+    .servicios-lista li {
+        padding: 10px 8px;
+    }
+
+    .servicios-lista li h3 {
+        font-size: 0.95rem;
+        padding: 0;
+    }
+
+    .servicios-lista li p {
+        font-size: 0.85rem;
+        padding: 4px 0 0 0;
+    }
+
+    /* Botón final adaptado al ancho móvil */
+    .servicios-boton .btn-reserva {
+        width: 100%;
+        padding: 16px 20px;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+}
+
+
+/* ==========================================================================
+   RESPONSIVE LOOKBOOK.HTML (TABLET 960px Y MÓVIL 436px)
+   ========================================================================== */
+
+/* --- TABLET (hasta 960px) --- */
+@media (max-width: 960px) {
+    #lookbook {
+        padding: 110px 30px 0 30px;
+    }
+
+    /* Cabecera: foto grande + CTA apilados */
+    .cab-b {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .cab-b img {
+        width: 100%;
+        height: 400px;
+    }
+    .cab-b .cta-cita {
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    /* Frase editorial */
+    .cab-c p {
+        font-size: 36px;
+    }
+
+    /* Contenido editorial: Press-ons + 2 fotos grandes */
+    .look-content {
+        padding-top: 50px;
+    }
+    .cont-a {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+    .a-img {
+        width: 100%;
+        flex-direction: row;
+        gap: 15px;
+    }
+    .a-img img:first-child,
+    .a-img img:last-child {
+        width: calc(50% - 7.5px);
+        max-height: 360px;
+        object-fit: cover;
+        align-self: stretch;
+    }
+    .cont-a .a-pressons {
+        max-width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .cont-a .a-pressons .presson {
+        flex: 0 0 calc(33.33% - 10px);
+    }
+
+    /* Vídeo ancho completo */
+    .look-video {
+        padding: 40px 0;
+    }
+
+    /* Marquesina */
+    .comunidad-marquee {
+        padding: 20px 0 90px 0;
+    }
+    .comunidad-item img {
+        max-height: 280px;
+    }
+
+    /* Galería final (2 columnas en tablet) */
+    .look-final {
+        padding: 20px 30px 50px 30px;
+    }
+    .look-final-b img {
+        max-width: calc(50% - 0.5rem);
+        width: 100%;
+    }
+}
+
+
+/* --- MÓVIL (hasta 436px) --- */
+@media (max-width: 436px) {
+    #lookbook {
+        padding: 100px 10px 0 10px;
+    }
+
+    .cab-a {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .cab-a img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+    }
+    .cab-b img {
+        height: 280px;
+    }
+    .cab-c {
+        margin-top: 15px;
+    }
+    .cab-c p {
+        font-size: 26px;
+        line-height: 1.25;
+    }
+
+    /* Contenido editorial */
+    .look-content {
+        padding-top: 35px;
+    }
+    .a-img {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .a-img img:first-child,
+    .a-img img:last-child {
+        width: 100%;
+        max-height: 320px;
+    }
+    .cont-a .a-pressons {
+        flex-direction: column;
+    }
+    .cont-a .a-pressons .presson {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Vídeo */
+    .look-video {
+        padding: 30px 0;
+    }
+
+    /* Marquesina */
+    .comunidad-marquee {
+        padding: 10px 0 60px 0;
+    }
+    .comunidad-track {
+        gap: 16px;
+    }
+    .comunidad-item img {
+        max-height: 220px;
+    }
+
+    /* Galería final (1 columna en móvil) */
+    .look-final {
+        padding: 10px 20px 40px 20px;
+    }
+    .look-final-b {
+        gap: 12px;
+        padding: 15px 0;
+    }
+    .look-final-b img {
+        max-width: 100%;
     }
 }
